@@ -1,7 +1,7 @@
 # README
 
 
-## customersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -22,7 +22,7 @@
 |customer_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to  :customer
+- belongs_to  :user
 
 
 ## ordersテーブル
@@ -35,7 +35,7 @@ Column|Type|Options|
 |customer_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :customer
+- belongs_to :user
 - has_many :orders_foods
 - has_many :foods,  through:  :orders_foods
 - has_many :orders_drinks

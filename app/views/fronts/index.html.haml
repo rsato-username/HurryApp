@@ -1,0 +1,25 @@
+.header
+  ようこそ#{current_user}様 ID
+  .header__bottom
+    .header__bottom__contents
+      %button{type: "button", placeholder: "ドリンク"}
+        ドリンク
+    .header__bottom__contents
+      %button{type: "button", placeholder: "フード"}
+        フード
+    .header__bottom__contents
+      %button{type: "button", placeholder: "売り子"}
+        売り子
+    .header__bottom__edit
+      = link_to '/users/:id/edit' do
+        設定
+.main
+  .main__content
+    = link_to root_path do
+      注文する
+  .main__drinks
+    [ドリンク]
+  .main__foods
+    [フード]
+  .main__salespersons
+    [売り子さん]

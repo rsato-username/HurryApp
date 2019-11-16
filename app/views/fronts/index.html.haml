@@ -1,0 +1,32 @@
+.header
+  ようこそ!!!! #{current_user.name}様 [ID]"#{current_user.userid}"だよ!!ログインで必要だからメモしといてね!!!!!
+  .header__top
+    -if user_signed_in?
+      -if current_user == @user || current_user.admin_flg?
+        = link_to rails_admin_path do
+          管理者マイページ
+      -else
+    -else
+  .header__bottom
+    .header__bottom__contents
+      %button{type: "button"}
+        ドリンク
+    -# .header__bottom__contents
+    -#   %button{type: "button"}
+    -#     食べもの
+    .header__bottom__contents
+      %button{type: "button"}
+        売り子
+    .header__bottom__edit
+      = link_to edit_user_path(current_user) do
+        ユーザー設定
+  .main
+    .main__content
+      = link_to orders_path do
+        注文する
+    .main__drinks
+      [ドリンク]
+    -# .main__foods
+    -#   [食べもの]
+    .main__salespersons
+      [売り子さん]

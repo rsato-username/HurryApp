@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-  def index
-  end
+
+  # def index
+  #   @user = User.find(params[:id])
+  # end
 
   def edit
+    
   end
 
   def update
@@ -17,4 +20,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :userid)
   end
+
 end

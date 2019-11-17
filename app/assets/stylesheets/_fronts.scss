@@ -2,10 +2,19 @@
   width: 100%;
   position: fixed;
   text-align: center;
-  background-color: #FFFFAA;
+  background-image: url("/assets/softheader.jpg");
   padding-top: 10px;
   &__top{
+    background-color: rgba(0, 255, 255, 0.5);
+    text-shadow: 2px 2px 0 #fff;
     font-size: 20px;
+    font-weight: bold;
+    color: red;
+    a{
+      text-shadow: 2px 2px 0 #000;
+      text-decoration: none;
+      color: #FFFFAA;
+    }
   }
   &__bottom{
     border: double;
@@ -16,9 +25,14 @@
     position: relative;
     &__contents{
       margin-left: 10px;
-      .botton{
-        text-decoration: none;
-        color: black;
+      #move_drink{
+        cursor: pointer;
+      }
+      #move_salesperson{
+        cursor: pointer;
+      }
+      #move_top{
+        cursor: pointer;
       }
     }
     &__edit{
@@ -33,7 +47,8 @@
 }
 .main{
   font-weight: bold;
-  background-image: url("/assets/softbank.png");
+  background-image: url("/assets/softbank.jpg");
+  text-shadow: 2px 2px 0 #fff;
   &__content{
     width: 100vh;
     margin: 0 auto;
@@ -49,7 +64,7 @@
   }
   &__drinks{
     display: block;
-    background-color: rgba(250, 250, 250, 0.5);
+    background-color: rgba(180, 180, 180, 0.5);
     margin: 50px;
     padding: 10px;
     &__image{
@@ -59,7 +74,7 @@
 
   &__salespersons{
     display: block;
-    background-color: rgba(250, 250, 250, 0.5);
+    background-color: rgba(180, 180, 180, 0.5);
     margin-top: 50px;
     margin-right: 50px;
     margin-left: 50px;

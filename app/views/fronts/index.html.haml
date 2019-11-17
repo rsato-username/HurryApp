@@ -1,6 +1,6 @@
 .header
   .header__top
-    ようこそ!!!! #{current_user.name}様 [ID]"#{current_user.userid}"だよ!!ログインで必要だからメモしといてね!!!!!<br>
+    ようこそ!!!! #{current_user.name}様 [ID] #{current_user.userid}<br>
     -if user_signed_in?
       -if current_user == @user || current_user.admin_flg?
         = link_to rails_admin_path do

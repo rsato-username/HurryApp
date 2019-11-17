@@ -24,13 +24,14 @@
         上に戻る
     .header__bottom__edit
       [ID] #{current_user.userid}
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
       = link_to edit_user_path(current_user) do
         ユーザー設定
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
 .main
   .main__content
     = link_to orders_path do
-      注文する
+      .main__content__btn
+        注文する
   .main__drinks
     [ドリンク]<br>
     .main__drinks__image
@@ -46,11 +47,11 @@
       = Drink.find(2).name
       = Drink.find(2).price.to_s(:currency, locale: :ja)
     .main__drinks__image
-      = image_tag "/assets/lemon-sower.jpg", size: "300x300", alt: "レモン酎ハイの画像"
+      = image_tag "/assets/lemon-sower.jpg", size: "250x300", alt: "レモン酎ハイの画像"
       = Drink.find(5).name
       = Drink.find(5).price.to_s(:currency, locale: :ja)
     .main__drinks__image
-      = image_tag "/assets/qustionmark.jpg", size: "300x300", alt: "ばりうまビールの画像"
+      = image_tag "/assets/tower.jpg", size: "300x300", alt: "ばりうまビールの画像"
       = Drink.find(7).name
       = Drink.find(7).price.to_s(:currency, locale: :ja)
     .main__drinks__image

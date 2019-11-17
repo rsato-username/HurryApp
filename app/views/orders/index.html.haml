@@ -22,5 +22,5 @@
       = f.text_field :salesperson, placeholder: 'お好きな売り子をご指名ください', size: 30 #インクリメンタルサーチで検索可能
     .order__submit
       = f.submit '注文確認へ'
-      = link_to "戻る", :back
+      = link_to "戻る", :back, data: {"turbolinks" => false}
     .order__back

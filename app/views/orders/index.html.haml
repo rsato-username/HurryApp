@@ -4,23 +4,23 @@
       [座席]<br>
       = f.text_field :seat, placeholder: '（例）1塁側10列10番', size: 30
     .order__drink
-      [ドリンク]⚾️1杯の値段です⚾️<br>
+      [ドリンク]⚾️1杯分の値段です⚾️<br>
       = f.collection_check_boxes :drink, Drink.all, :name, :price, include_hidden: false do |b|
         = b.label do
           = b.check_box
           = b.object.name
-          = b.object.price
-    .order__food
-      -# [食べもの]⚾️1人分の値段です⚾️
-      -# = f.collection_check_boxes :food, @food, :id, :name, {} do |b|
-      -#   = b.label do
-      -#     = b.check_box
-      -#     = b.object.name
-      -#     = b.object.price
+          = b.object.price.to_s(:currency, locale: :ja)
+    -# .order__food
+    -#   [食べもの]⚾️1人分の値段です⚾️<br>
+    -#   = f.collection_check_boxes :food, Food.all, :id, :name, {} do |b|
+    -#     = b.label do
+    -#       = b.check_box
+    -#       = b.object.name
+    -#       = b.object.price.to_s(:currency, locale: :ja)
     .order__salesperson
       [売り子]⚾️ご指名されない場合早くお届けできます⚾️<br>
-      = f.text_field :salesperson, placeholder: 'お好きな売り子をご指名ください', size: 30#インクリメンタルサーチで検索可能
+      = f.text_field :salesperson, placeholder: 'お好きな売り子をご指名ください', size: 30 #インクリメンタルサーチで検索可能
     .order__submit
-      = f.submit '注文確認画面へ'
+      = f.submit '注文確認へ'
       = link_to "戻る", :back
     .order__back

@@ -16,32 +16,36 @@
     position: relative;
     &__contents{
       margin-left: 10px;
+      .botton{
+        text-decoration: none;
+        color: black;
+      }
     }
     &__edit{
       position: absolute;
       right: 20px;
       a{
         text-decoration: none;
+        color: black;
       }
     }
   }
 }
 .main{
+  font-weight: bold;
   background-image: url("/assets/softbank.png");
   &__content{
-    margin-top: 150px;
-    font-size: 100px;
-    display: inline-block;
-    padding: 0.5em 1em;
-    background: #668ad8;
-    color: #FFF;
-    border-radius: 3px;
-    a{
-      text-decoration: none;
+    width: 100vh;
+    margin: 0 auto;
+    &__btn{
+      margin-top: 150px;
+      font-size: 100px;
+      display: inline-block;
+      padding: 0.5em 1em;
+      background: #FFFF99;
+      color: black;
+      border-radius: 1000px;
     }
-  }
-  &__content:hover {
-    background-color: #3399FF;
   }
   &__drinks{
     display: block;

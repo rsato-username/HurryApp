@@ -1,8 +1,5 @@
-// var position = $('#drinks').offset().top;
-
-
 $(function() {
-  $('#move_drink').click(function() {
+  $('#move_drink').click('turbolinks:load', function() {
     $("html").animate({
       scrollTop : $('.main__drinks').offset().top
     }, {
@@ -12,7 +9,7 @@ $(function() {
 });
 
 $(function() {
-  $('#move_salesperson').click(function() {
+  $('#move_salesperson').click('turbolinks:load', function() {
     $("html").animate({
       scrollTop : $('.main__salespersons').offset().top
     }, {
@@ -22,7 +19,7 @@ $(function() {
 });
 
 $(function() {
-  $('#move_top').click(function() {
+  $('#move_top').click('turbolinks:load', function() {
     $("html").animate({
       scrollTop : $('.main').offset().top
     }, {

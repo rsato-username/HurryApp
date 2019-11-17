@@ -14,9 +14,9 @@ class OrdersController < ApplicationController
     end
   end
  
-  # def show
-  #   @order = Order.find[:id]
-  # end 
+  def show
+    @order = Order.find[:id]
+  end 
 
   private
 

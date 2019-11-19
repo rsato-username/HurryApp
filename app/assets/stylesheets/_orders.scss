@@ -1,3 +1,38 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.flash{
+  text-align: center;
+  background-color: skyblue;
+  color: #fff;
+}
+.order{
+  padding: 20px;
+  &__form{
+    border: 1px solid #aaa;
+    width: 1000px;
+    height: 700px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    &__seat{
+      margin-bottom: 30px;
+    }
+    &__drink{
+      margin-bottom: 30px;
+    }
+    &__salesperson{
+      margin-bottom: 30px;
+      &__search{
+        text-align: right;
+        padding-right: 170px;
+      }
+    }
+    &__submit{
+      line-height: 100px;
+      input#submit {
+        width: 150px;
+        height: 50px;
+        padding: 15px, 40px;
+        font-size: 1.2em;
+      }
+    }
+  }
+}

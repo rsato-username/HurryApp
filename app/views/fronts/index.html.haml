@@ -1,77 +1,91 @@
-.header
-  .header__top
-    ようこそ!!!! #{current_user.name}様 [ID] #{current_user.userid}<br>
-    -if user_signed_in?
-      -if current_user == @user || current_user.admin_flg?
-        = link_to rails_admin_path do
-          ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠<br>
-          ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠管理者マイページ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠<br>
-          ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+.body
+  .body__header
+    .body__header__top
+      -if user_signed_in?
+        -if current_user == @user || current_user.admin_flg?
+          = link_to rails_admin_path do
+            ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠<br>
+            ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠管理者ページ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠<br>
+            ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+        -else
       -else
-    -else
-  .header__bottom
-    .header__bottom__contents
-      %button{type: "button", id: "move_drink"}
+      .body__header__top__left
+        = link_to root_path, data: {"turbolinks" => false} do
+          Hurry App
+      .body__header__top__right
+        #{current_user.name}さん ID#{current_user.userid}<br>
+    .body__header__bottom
+      .body__header__bottom__contents
+        %button{type: "button", id: "move_drink"}
+          ドリンク
+      -# .header__bottom__contents
+      -#   %button{type: "button"}
+      -#     食べもの
+      .body__header__bottom__contents
+        %button{type: "button", id: "move_salesperson"}
+          売り子
+      .body__header__bottom__contents
+        %button{type: "button", id: "move_top"}
+          上に戻る
+      .body__header__bottom__contents
+        = link_to orders_path, id: "order_btn", data: {"turbolinks" => false} do
+          注文する
+      .body__header__bottom__edit
+        .body__header__bottom__edit__set
+          = link_to edit_user_path(current_user) do
+            ユーザー設定
+        .body__header__bottom__edit__logout
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+  .body__main
+    .body__main__content
+      .body__main__content__image
+        = image_tag "/assets/howks.jpg", size: "670x375", alt: "売り子の画像"
+      .body__main__content__text
+        THINK OUT OF<br>
+        THE BOX<br>
+        企業を想い、考える。<br>
+    .body__main__drinks
+      .body__main__drinks__text
         ドリンク
-    -# .header__bottom__contents
-    -#   %button{type: "button"}
-    -#     食べもの
-    .header__bottom__contents
-      %button{type: "button", id: "move_salesperson"}
-        売り子
-    .header__bottom__contents
-      %button{type: "button", id: "move_top"}
-        上に戻る
-    .header__bottom__edit
-      [ID] #{current_user.userid}
-      = link_to edit_user_path(current_user) do
-        ユーザー設定
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-.main
-  .main__content
-    = link_to orders_path do
-      .main__content__btn
-        注文する
-  .main__drinks
-    [ドリンク]<br>
-    .main__drinks__image
-      = image_tag "/assets/beer.jpg", size: "300x300", alt: "生ビールの画像"
-      = Drink.find(4).name
-      = Drink.find(4).price.to_s(:currency, locale: :ja)
-    .main__drinks__image
-      = image_tag "/assets/hi-bowl.jpg", size: "300x300", alt: "ハイボールの画像"
-      = Drink.find(6).name
-      = Drink.find(6).price.to_s(:currency, locale: :ja)
-    .main__drinks__image
-      = image_tag "/assets/kiui.jpeg", size: "300x300", alt: "メロンソーダの画像"
-      = Drink.find(2).name
-      = Drink.find(2).price.to_s(:currency, locale: :ja)
-    .main__drinks__image
-      = image_tag "/assets/lemon-sower.jpg", size: "250x300", alt: "レモン酎ハイの画像"
-      = Drink.find(5).name
-      = Drink.find(5).price.to_s(:currency, locale: :ja)
-    .main__drinks__image
-      = image_tag "/assets/tower.jpg", size: "300x300", alt: "ばりうまビールの画像"
-      = Drink.find(7).name
-      = Drink.find(7).price.to_s(:currency, locale: :ja)
-    .main__drinks__image
-      = image_tag "/assets/u-rontea.png", size: "250x300", alt: "黒烏龍茶の画像"
-      = Drink.find(3).name
-      = Drink.find(3).price.to_s(:currency, locale: :ja)
+      .body__main__drinks__image
+        = image_tag "/assets/beer.jpg", size: "300x300", alt: "生ビールの画像"
+        = Drink.find(4).name
+        = Drink.find(4).price.to_s(:currency, locale: :ja)
+      .body__main__drinks__image
+        = image_tag "/assets/hi-bowl.jpg", size: "300x300", alt: "ハイボールの画像"
+        = Drink.find(6).name
+        = Drink.find(6).price.to_s(:currency, locale: :ja)
+      .body__main__drinks__image
+        = image_tag "/assets/kiui.jpeg", size: "300x300", alt: "メロンソーダの画像"
+        = Drink.find(2).name
+        = Drink.find(2).price.to_s(:currency, locale: :ja)
+      .body__main__drinks__image
+        = image_tag "/assets/lemon-sower.jpg", size: "250x300", alt: "レモン酎ハイの画像"
+        = Drink.find(5).name
+        = Drink.find(5).price.to_s(:currency, locale: :ja)
+      .body__main__drinks__image
+        = image_tag "/assets/tower.jpg", size: "300x300", alt: "ばりうまビールの画像"
+        = Drink.find(7).name
+        = Drink.find(7).price.to_s(:currency, locale: :ja)
+      .body__main__drinks__image
+        = image_tag "/assets/u-rontea.png", size: "250x300", alt: "黒烏龍茶の画像"
+        = Drink.find(3).name
+        = Drink.find(3).price.to_s(:currency, locale: :ja)
 
-  -# .main__foods
-  -#   [食べもの]
-  .main__salespersons
-    [売り子さん]<br>
-    .main__salespersons__image
-      = image_tag "/assets/maiyan.jpg", size: "250x300", alt: "まいやんの画像"
-      = Salesperson.find(1).name
-    .main__salespersons__image
-      = image_tag "/assets/teti.jpg", size: "250x300", alt: "てちの画像"
-      = Salesperson.find(2).name
-    .main__salespersons__image
-      = image_tag "/assets/ryo.jpg", size: "250x300", alt: "りょうの画像"
-      = Salesperson.find(3).name
-    .main__salespersons__image
-      = image_tag "/assets/masaharu.jpg", size: "250x300", alt: "まさはるの画像"
-      = Salesperson.find(4).name
+    -# .body__main__foods
+    -#   [食べもの]
+    .body__main__salespersons
+      .body__main__salespersons__text
+        売り子
+      .body__main__salespersons__image
+        = image_tag "/assets/maiyan.jpg", size: "250x300", alt: "まいやんの画像"
+        = Salesperson.find(1).name
+      .body__main__salespersons__image
+        = image_tag "/assets/teti.jpg", size: "250x300", alt: "てちの画像"
+        = Salesperson.find(2).name
+      .body__main__salespersons__image
+        = image_tag "/assets/ryo.jpg", size: "250x300", alt: "りょうの画像"
+        = Salesperson.find(3).name
+      .body__main__salespersons__image
+        = image_tag "/assets/masaharu.jpg", size: "250x300", alt: "まさはるの画像"
+        = Salesperson.find(4).name

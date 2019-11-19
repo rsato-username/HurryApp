@@ -1,86 +1,160 @@
-.header{
-  width: 100%;
-  position: fixed;
-  text-align: center;
-  background-image: url("/assets/softheader.jpg");
-  padding-top: 10px;
-  &__top{
-    background-color: rgba(0, 255, 255, 0.5);
-    text-shadow: 2px 2px 0 #fff;
-    font-size: 20px;
-    font-weight: bold;
-    color: red;
-    a{
-      text-shadow: 2px 2px 0 #000;
-      text-decoration: none;
-      color: #FFFFAA;
-    }
-  }
-  &__bottom{
-    border: double;
-    padding-left: 20px;
-    margin-top: 10px;
-    background-color: #FFFFE0;
-    display: flex;
-    position: relative;
-    &__contents{
-      margin-left: 10px;
-      #move_drink{
-        cursor: pointer;
-      }
-      #move_salesperson{
-        cursor: pointer;
-      }
-      #move_top{
-        cursor: pointer;
-      }
-    }
-    &__edit{
-      position: absolute;
-      right: 20px;
+.body{
+  &__header{
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    padding-top: 10px;
+    &__top{
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      font-weight: bold;
       a{
         text-decoration: none;
-        color: black;
+      }
+      &__left{
+        margin-left: 30px;
+        a{
+          color: #000;
+          text-decoration: none;
+        }
+      }
+      &__right{
+        margin-right: 30px;
+      }
+    }
+    &__bottom{
+      border: double;
+      padding-left: 20px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+      &__contents{
+        margin-left: 10px;
+        line-height: 30px;
+        a{
+          font-weight: bold;
+          color: #000;
+          text-decoration: none;
+        }
+        #move_drink{
+          cursor: pointer;
+          background-color: white;
+          height: 30px;
+          border: none;
+        }
+        #move_drink:hover{
+          background-color: yellow;
+        }
+        #move_drink:focus{
+          outline: none;
+        }
+        #move_salesperson{
+          cursor: pointer;
+          background-color: white;
+          height: 30px;
+          border: none;
+        }
+        #move_salesperson:hover{
+          background-color: yellow;
+        }
+        #move_salesperson:focus{
+          outline: none;
+        }
+        #move_top{
+          cursor: pointer;
+          background-color: white;
+          height: 30px;
+          border: none;
+        }
+        #move_top:hover{
+          background-color: yellow;
+        }
+        #move_top:focus{
+          outline: none;
+        }
+        #order_btn{
+          height: 30px;
+        }
+        #order_btn:hover{
+          background-color: yellow;
+          height: 30px;
+
+        }
+      }
+      &__contents:hover{
+        background-color: yellow;
+      }
+      &__edit{
+        position: absolute;
+        line-height: 30px;
+        display: flex;
+        right: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        &__set{
+          margin-right: 20px;
+        }
+        &__set:hover{
+          background-color: yellow;
+        }
+        &__logout:hover{
+          background-color: yellow;
+        }
       }
     }
   }
-}
-.main{
-  font-weight: bold;
-  background-image: url("/assets/softbank.jpg");
-  text-shadow: 2px 2px 0 #fff;
-  &__content{
-    width: 100vh;
-    margin: 0 auto;
-    &__btn{
-      margin-top: 150px;
-      font-size: 100px;
-      display: inline-block;
-      padding: 0.5em 1em;
-      background: #FFFF99;
-      color: black;
-      border-radius: 1000px;
+  &__main{
+    padding-top: 150px;
+    font-weight: bold;
+    &__content{
+      margin: 0 auto;
+      position: relative;
+      &__image{
+        text-align: center;
+        zoom: 1.75;
+      }
+      &__text{
+        text-shadow: 2px 2px 0 #000;
+        color: #FFf;
+        position: absolute;
+        top: 350px;
+        left: 200px;
+        font-size: 50px;
+      }
     }
-  }
-  &__drinks{
-    display: block;
-    background-color: rgba(180, 180, 180, 0.5);
-    margin: 50px;
-    padding: 10px;
-    &__image{
-      display: inline;
+    &__drinks{
+      display: block;
+      margin-top: 200px;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-bottom: 200px;
+      padding: 10px;
+      &__text{
+        font-size: 30px;
+      }
+      &__image{
+        display: inline;
+        line-height: 100px;
+      }
     }
-  }
-
-  &__salespersons{
-    display: block;
-    background-color: rgba(180, 180, 180, 0.5);
-    margin-top: 50px;
-    margin-right: 50px;
-    margin-left: 50px;
-    padding: 10px;
-    &__image{
-      display: inline;
+    &__salespersons{
+      display: block;
+      margin-top: 200px;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-bottom: 200px;
+      padding: 10px;
+      &__text{
+        font-size: 30px;
+      }
+      &__image{
+        display: inline;
+      }
     }
   }
 }

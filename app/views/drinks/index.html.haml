@@ -1,0 +1,239 @@
+.drink
+  - @drink.all.each do |drink|
+    = drink.name
+    
+
+
+
+
+
+
+
+
+// ==========新規登録画面============
+
+
+
+-# .body
+-#   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#     .body__header
+-#       .body__header__logo
+-#         = image_tag "/assets/fmarket_logo_red.svg", alt: "ふりまの画像", size: "200x128"
+-#     .body__main
+-#       .body__main__top
+-#         .body__main__top__text
+-#           アカウントをお持ちでない方はこちら
+-#         .body__main__top__btn
+-#           = link_to "Sign up", new_registration_path(resource_name)
+-#           新規会員登録
+-#       .body__main__medium
+-#         .body__main__medium__facebook
+-#           facebook
+-#         .body__main__medium__google
+-#           google
+-#       .body__main__bottom
+-#         .body__main__bottom__email
+-#           = f.email_field :email, autofocus: true, autocomplete: "email"
+-#         .body__main__bottom__password
+-#           = f.password_field :password, autocomplete: "current-password"
+-#         .body__main__bottom__robot
+-#           robot
+-#         .body__main__bottom__login
+-#           = f.submit "Log in"
+-#         .body__main__bottom__forget
+-#           パスワードお忘れの方
+-#     .body__footer
+-#       .body__footer__top
+-#         .body__footer__top__privacy
+-#           プライバシーポリシー
+-#         .body__footer__top__rule
+-#           メルカリ利用規約
+-#         .body__footer__top__trade
+-#           特定商取引に関する表記
+-#       .body__footer__bottom
+-#         .body__footer__bottom__image
+-#           = image_tag "/assets/logo_gray.svg", alt: "フリマの画像", size: "100x80"
+-#         .body__footer__bottom__string
+-#           © 2019 Fmarket
+
+
+
+
+-# // ==========本人情報画面============
+
+
+-# .content
+-#   .content__header
+-#     本人情報の登録
+-#   .content__inner
+-#     .content__inner__discription
+-#       お客さまの本人情報をご登録ください。<br>
+-#       登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。<br>
+-#     .content__inner__confirmation
+-#       = link_to "本人確認書類のアップロードについて＞", "https://ja.wikipedia.org/wiki/%E6%9C%AC%E4%BA%BA%E7%A2%BA%E8%AA%8D"
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         名前
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         名前カナ
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         生年月日
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         郵便番号 
+-#       .content__inner__field__arbitrary
+-#         任意
+-#     %input.text_area
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         都道府県 
+-#       .content__inner__field__arbitrary
+-#         任意
+-#     %input.select_box
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         市区町村 
+-#       .content__inner__field__arbitrary
+-#         任意
+-#     %input.text_area
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         番地 
+-#       .content__inner__field__arbitrary
+-#         任意
+-#     %input.text_area
+-#     .content__inner__field
+-#       .content__inner__field__label
+-#         建物名
+-#       .content__inner__field__arbitrary
+-#         任意
+-#     %input.text_area
+-#     .content__inner__submit
+-#       %button 登録する
+-#     .content__inner__info
+-#       = link_to "本人情報の登録について＞", "https://www.amazon.co.jp/gp/help/customer/display.html?nodeId=202075030"
+        
+
+
+-# // ==========商品詳細画面============
+
+-# = render 'shared/top_header'
+
+-# .body
+-#   .body__item
+-#     .body__item__title
+-#       キウイの写真
+-#     .body__item__infobox
+-#       .body__item__infobox__image
+-#         = image_tag "/assets/kiui.jpeg", alt: "商品の写真", size: "300x300"
+-#       .body__item__infobox__user
+-#         %table{border: "1"}
+-#           %tr
+-#             %th 出品者
+-#             %td
+-#               = link_to "ユーザー", root_path
+-#               <br>
+-#               評価テーブル
+-#           %tr
+-#             %th カテゴリー
+-#             %td
+-#               = link_to "カテゴリ", root_path
+-#           %tr
+-#             %th ブランド
+-#             %td 
+-#               = link_to "ブランド", root_path
+-#           %tr
+-#             %th 商品のサイズ
+-#             %td ５L
+-#           %tr
+-#             %th 商品の状態
+-#             %td 腐敗
+-#           %tr
+-#             %th 配送料の負担
+-#             %td 知らん
+-#           %tr
+-#             %th 配送方法
+-#             %td 普通郵便
+-#           %tr
+-#             %th 配送元地域
+-#             %td 
+-#               = link_to "都道府県", root_path 
+-#           %tr
+-#             %th 発送日の目安
+-#             %td 即日
+-#     .body__item__pricebox
+-#       .body__item__pricebox__price
+-#         ￥111111
+-#       .body__item__pricebox__tax
+-#         （税金払え）
+-#       .body__item__pricebox__postage
+-#         送料込み？
+-#     %button.progress 購入画面に進む
+-#     .body__item__discription
+-#       お金恵んで<br>
+-#       はよ<br>
+-#       腹減った<br>
+-#       うおおおおおおおおおおおおおおお
+-#     .body__item__bottom
+-#       %button.like いいねすんな
+-#       %button.inappropriate 不適切な商品の報告
+-#       .body__item__bottom__safe
+-#         = link_to "🔓安心安全への取り組み", "https://www.alsok.co.jp/"
+-#   .body__chat
+-#     .body__chat__box
+-#       .body__chat__box__imgae
+-#         = image_tag "/assets/star-on.png", alt: "ユーザーの写真", size: "30x30"
+-#       .body__chat__box__box
+-#         .body__chat__box__nickname
+-#           nickname
+-#         .body__chat__box__massage
+-#           .body__chat__box__massage__content
+-#             値下げしろ高いしね
+-#           .body__chat__box__massage__bottom
+-#             .body__chat__box__massage__bottom__past
+-#               1万年と2000年前から
+-#             .body__chat__box__massage__bottom__inappropriate
+-#               🚫
+-#     .body__chat__caution
+-#       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+-#     %input.text_area
+-#     %button.comment コメントする
+-#   .body__list
+-#     = link_to "＜ひとつ古く出品されたitem", root_path
+-#     = link_to "ひとつ新しく出品されたitem＞", root_path
+-#   .body__snsbox
+-#     = link_to "😄", root_path
+-#     = link_to "😄", root_path
+-#     = link_to "😄", root_path
+-#     = link_to "😄", root_path
+-#   .body__itemtable
+-#     %ul
+-#       = link_to "nicknameさんのその他の出品", root_path
+-#       %li
+-#         トミーのコピペする予定（each）
+-#         .item-box
+-#           %a(href="#")
+-#             .item-box__img
+-#               %span
+-#                 ¥1,000
+-#               %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m67371857333_1.jpg?1564711282", :width => "186"}/
+-#             .item-box__title
+-#               %p ナイキ靴わーいわーいあああああああああああああああああああああ
+-#               .gradient
+-#     %ul
+-#       = link_to "カテゴリーにひもづくその他の出品", root_path
+-#       %li
+-#         トミーのコピペ予定（each）
+-#         .item-box
+-#           %a(href="#")
+-#             .item-box__img
+-#               %span
+-#                 ¥1,000
+-#               %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m67371857333_1.jpg?1564711282", :width => "186"}/
+-#             .item-box__title
+-#               %p ナイキ靴わーいわーいあああああああああああああああああああああ
+-#               .gradient
+
+-# = render 'shared/top_footer'

@@ -2,35 +2,34 @@ class OrdersController < ApplicationController
   before_action :move_to_index
 
   def index
+    @order = Order.all.order("created_at DESC")
+  end
+
+  def new
     @order = Order.new
+    return nil if params[:keyword] == ""
+    @orders = Salesperson.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html 
+      format.json 
+    end
   end
 
   def create
     @order = Order.create(order_params)
     if @order.save
-      redirect_to root_path
+      redirect_to new_review_path
     else
-      render action: 'index'
+      redirect_to orders_path
+      flash[:notice] = "座席とドリンクを入力してください"
     end
   end
- 
-  # def show
-  #   @order = Order.find[:id]
-  # end 
 
   private
 
   def order_params
     params.require(:order).permit(:seat, { drink: [] }, :salesperson).merge(user_id: current_user.id)
   end
-
-  # def drink_params
-  #   params.require(:drink).permit(:name)
-  # end
-
-  # def food_params
-  #   params.require(:food).permit(:name)
-  # end
 
   def move_to_index
     redirect_to new_user_session_path unless user_signed_in?

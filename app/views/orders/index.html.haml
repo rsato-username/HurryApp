@@ -1,26 +1,13 @@
 .order
-  = form_with model: @order, local: true do |f|
-    .order__seat
-      [座席]<br>
-      = f.text_field :seat, placeholder: '（例）1塁側10列10番', size: 30
-    .order__drink
-      [ドリンク]⚾️1杯の値段です⚾️<br>
-      = f.collection_check_boxes :drink, Drink.all, :name, :price, include_hidden: false do |b|
-        = b.label do
-          = b.check_box
-          = b.object.name
-          = b.object.price
-    .order__food
-      -# [食べもの]⚾️1人分の値段です⚾️
-      -# = f.collection_check_boxes :food, @food, :id, :name, {} do |b|
-      -#   = b.label do
-      -#     = b.check_box
-      -#     = b.object.name
-      -#     = b.object.price
-    .order__salesperson
-      [売り子]⚾️ご指名されない場合早くお届けできます⚾️<br>
-      = f.text_field :salesperson, placeholder: 'お好きな売り子をご指名ください', size: 30#インクリメンタルサーチで検索可能
-    .order__submit
-      = f.submit '注文確認画面へ'
-      = link_to "戻る", :back
-    .order__back
+  .order__drink
+    注文票
+  .order__discription
+    - @order.all.each do |order|
+      %ul= order.created_at.strftime("%Y-%m-%d %H:%M")
+      %li= order.user.name
+      %li= order.seat
+      %li= order.salesperson
+      <br>
+    
+    
+

@@ -7,6 +7,11 @@ class User < ApplicationRecord
 
   before_create :generate_userid
 
+
+  validates :nickname, presence: true
+  validates :email, uniqueness: true  
+  validates :password, presence: true, length: { minimum: 7 }  #:password_confirmation,allow_blank: true 抜かした
+
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)

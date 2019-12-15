@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root 'fronts#index'
   resources :users, only: [:edit, :update]
   resources :orders, only: [:index, :new, :create]
+  resources :reviews, only: [:index, :new, :create]
+  # resources :drinks, only: [:index]
+
   # resources :drinks, only: [:index, :new]
   # resources :fronts, only: :index
   # namespace :admin do

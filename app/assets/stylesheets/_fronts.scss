@@ -1,0 +1,178 @@
+*{
+  box-sizing: border-box;
+  object-fit: contain;
+  font-family:  'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro';
+  text-decoration: none;
+}
+
+.body{
+  &__header{
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    padding-top: 10px;
+    &__top{
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      font-weight: bold;
+      a{
+        text-decoration: none;
+        color: brown;
+      }
+      &__left{
+        margin-left: 30px;
+        a{
+          color: #000;
+          text-decoration: none;
+        }
+      }
+      &__right{
+        margin-right: 30px;
+      }
+    }
+    &__bottom{
+      border: double;
+      padding-left: 20px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+      &__contents{
+        margin-left: 10px;
+        line-height: 30px;
+        a{
+          font-weight: bold;
+          color: #000;
+          text-decoration: none;
+        }
+        #move_drink{
+          cursor: pointer;
+          background-color: white;
+          height: 30px;
+          border: none;
+          &:hover{
+            background-color: yellow;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+        #move_salesperson{
+          cursor: pointer;
+          background-color: white;
+          height: 30px;
+          border: none;
+          &:hover{
+            background-color: yellow;
+          }
+          &:focus{
+            outline: none;
+        }
+        }
+        #move_top{
+          cursor: pointer;
+          background-color: white;
+          height: 30px;
+          border: none;
+          &:hover{
+            background-color: yellow;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+        #order_btn{
+          height: 30px;
+          &:hover{
+            background-color: yellow;
+            height: 30px;
+          }
+        }
+      }
+      &__contents:hover{
+        background-color: yellow;
+      }
+      &__edit{
+        position: absolute;
+        line-height: 30px;
+        display: flex;
+        right: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        &__set{
+          margin-right: 20px;
+          &:hover{
+            background-color: yellow;
+          }
+        }
+        &__logout:hover{
+          background-color: yellow;
+        }
+      }
+    }
+  }
+  &__main{
+    padding-top: 150px;
+    font-weight: bold;
+    &__content{
+      margin: 0 auto;
+      position: relative;
+      &__image{
+        text-align: center;
+        img{
+          zoom: 1.75;
+        }
+      }
+      &__text{
+        text-shadow: 2px 2px 0 #000;
+        color: #FFf;
+        position: absolute;
+        top: 350px;
+        left: 200px;
+        font-size: 50px;
+      }
+    }
+    &__drinks{
+      display: block;
+      margin: 200px 50px;
+      padding: 10px;
+      &__title{
+        font-size: 30px;
+      }
+      &__name{
+        width: 300px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        // display: inline;
+
+      }
+      &__image{
+        box-shadow: 0 0 8px gray;
+        width: 300px;
+        // display: inline;
+      }
+    }
+    &__salespersons{
+      display: block;
+      margin: 200px 50px;
+      padding: 10px;
+      &__title{
+        font-size: 30px;
+      }
+      &__name{
+        width: 300px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+      &__image{
+        // display: inline;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+- if flash[:alert]
+  .flash
+    = flash[:alert]
+.order
+  = form_with model: @order, local: true, remote: true do |f|
+    .order__form
+      .order__form__seat
+        [座席]
+        = f.text_field :seat, placeholder: '（例）1塁側10列10番', size: 30
+      .order__form__drink
+        [ドリンク]⚾️1杯分の値段です⚾️
+        = f.collection_check_boxes :drink, Drink.all, :name, :price, include_hidden: false do |b|
+          = b.label do
+            = b.check_box
+            = b.object.name
+            = b.object.price.to_s(:currency, locale: :ja)
+      -# .order__food
+      -#   [食べもの]⚾️1人分の値段です⚾️<br>
+      -#   = f.collection_check_boxes :food, Food.all, :id, :name, {} do |b|
+      -#     = b.label do
+      -#       = b.check_box
+      -#       = b.object.name
+      -#       = b.object.price.to_s(:currency, locale: :ja)
+      .order__form__salesperson
+        [売り子]⚾️ご指名されない場合早くお届けできます⚾️
+        = f.text_field :salesperson, placeholder: 'お好きな売り子をご指名ください', size: 30 , id: "search" #インクリメンタルサーチで検索可能
+        .order__form__salesperson__search
+      .order__form__submit
+        = f.submit '注文する', id: "submit"
+      .order__form__back
+        = link_to "戻る", root_path, data: {"turbolinks" => false}
+      .order__form__image
+        = image_tag "/assets/uriko.jpeg", alt: "メロンソーダの画像"

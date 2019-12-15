@@ -2,15 +2,7 @@ class Order < ApplicationRecord
   validates :seat, presence: true
   validates :drink, presence: true
   # validates :food, presence: true
-  validates :salesperson, presence: true
-
-  # validates_acceptance_of :confirming
-  # after_validation :check_confirming
-
-  # def check_confirming
-  #   errors.dete(:confirming)
-  #   self.confirming = errors.empty? ? '1' : ''
-  # end
+  # validates :salesperson, presence: true
 
   belongs_to :user
   has_many :order_food

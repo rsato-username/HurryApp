@@ -1,0 +1,17 @@
+- if flash[:notice]
+  .flash
+    = flash[:notice]
+.body
+  .body__complete
+    注文が完了しました。少々お待ちください。
+    = link_to 'ホームに戻る', root_path, data: {"turbolinks" => false}
+  .body__review
+    = form_with model: @review, local: true, remote: true do |f|
+      .body__review__rate#star
+        = f.label :rate, '星'
+        = f.hidden_field :rate
+      .body__review__text
+        = f.label :レビュー
+        = f.text_area :text
+      .body__review__submit
+        = f.submit "レビュー評価"

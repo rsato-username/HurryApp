@@ -1,0 +1,13 @@
+.order{
+  padding: 50px;
+  &__drink{
+    margin: 20px;
+    font-size: 20px;
+  }
+  &__discrption{
+    width: 600px;
+    .ul{
+      font-size: 25px;
+    }
+  }
+}

@@ -1,3 +1,10 @@
+*{
+  box-sizing: border-box;
+  object-fit: contain;
+  font-family:  'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro';
+  text-decoration: none;
+}
+
 .body{
   &__header{
     z-index: 100;
@@ -13,6 +20,7 @@
       font-weight: bold;
       a{
         text-decoration: none;
+        color: brown;
       }
       &__left{
         margin-left: 30px;
@@ -44,44 +52,43 @@
           background-color: white;
           height: 30px;
           border: none;
-        }
-        #move_drink:hover{
-          background-color: yellow;
-        }
-        #move_drink:focus{
-          outline: none;
+          &:hover{
+            background-color: yellow;
+          }
+          &:focus{
+            outline: none;
+          }
         }
         #move_salesperson{
           cursor: pointer;
           background-color: white;
           height: 30px;
           border: none;
+          &:hover{
+            background-color: yellow;
+          }
+          &:focus{
+            outline: none;
         }
-        #move_salesperson:hover{
-          background-color: yellow;
-        }
-        #move_salesperson:focus{
-          outline: none;
         }
         #move_top{
           cursor: pointer;
           background-color: white;
           height: 30px;
           border: none;
-        }
-        #move_top:hover{
-          background-color: yellow;
-        }
-        #move_top:focus{
-          outline: none;
+          &:hover{
+            background-color: yellow;
+          }
+          &:focus{
+            outline: none;
+          }
         }
         #order_btn{
           height: 30px;
-        }
-        #order_btn:hover{
-          background-color: yellow;
-          height: 30px;
-
+          &:hover{
+            background-color: yellow;
+            height: 30px;
+          }
         }
       }
       &__contents:hover{
@@ -98,9 +105,9 @@
         }
         &__set{
           margin-right: 20px;
-        }
-        &__set:hover{
-          background-color: yellow;
+          &:hover{
+            background-color: yellow;
+          }
         }
         &__logout:hover{
           background-color: yellow;
@@ -116,7 +123,9 @@
       position: relative;
       &__image{
         text-align: center;
-        zoom: 1.75;
+        img{
+          zoom: 1.75;
+        }
       }
       &__text{
         text-shadow: 2px 2px 0 #000;
@@ -129,31 +138,40 @@
     }
     &__drinks{
       display: block;
-      margin-top: 200px;
-      margin-left: 50px;
-      margin-right: 50px;
-      margin-bottom: 200px;
+      margin: 200px 50px;
       padding: 10px;
-      &__text{
+      &__title{
         font-size: 30px;
       }
+      &__name{
+        width: 300px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        // display: inline;
+
+      }
       &__image{
-        display: inline;
-        line-height: 100px;
+        box-shadow: 0 0 8px gray;
+        width: 300px;
+        // display: inline;
       }
     }
     &__salespersons{
       display: block;
-      margin-top: 200px;
-      margin-left: 50px;
-      margin-right: 50px;
-      margin-bottom: 200px;
+      margin: 200px 50px;
       padding: 10px;
-      &__text{
+      &__title{
         font-size: 30px;
       }
+      &__name{
+        width: 300px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
       &__image{
-        display: inline;
+        // display: inline;
       }
     }
   }

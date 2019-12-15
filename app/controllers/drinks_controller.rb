@@ -1,9 +1,6 @@
 class DrinksController < ApplicationController
-  def new
-    Drink.new
-  end
-
+  
   def index
-    
+    @drink = Drink.find(params[:id])
   end
 end

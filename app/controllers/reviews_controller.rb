@@ -1,12 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :move_to_index
 
-  def index
+  def new
     @review = Review.new
   end
 
   def create
-    @review = Review.new
     @revriews = Review.create(review_params)
     if @reviews.save
       redirect_to root_path

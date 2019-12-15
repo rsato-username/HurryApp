@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
   before_action :move_to_index
 
   def index
+    @order = Order.all.order("created_at DESC")
+  end
+
+  def new
     @order = Order.new
     return nil if params[:keyword] == ""
     @orders = Salesperson.where('name LIKE(?)', "%#{params[:keyword]}%")
@@ -14,7 +18,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.create(order_params)
     if @order.save
-      redirect_to reviews_path
+      redirect_to new_review_path
     else
       redirect_to orders_path
       flash[:notice] = "座席とドリンクを入力してください"

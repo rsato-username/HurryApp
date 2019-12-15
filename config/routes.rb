@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'fronts#index'
   resources :users, only: [:edit, :update]
-  resources :orders, only: [:index, :create]
-  resources :reviews, only: [:index, :create]
+  resources :orders, only: [:index, :new, :create]
+  resources :reviews, only: [:index, :new, :create]
+  # resources :drinks, only: [:index]
+
   # resources :drinks, only: [:index, :new]
   # resources :fronts, only: :index
   # namespace :admin do

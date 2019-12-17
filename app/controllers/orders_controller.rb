@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :move_to_index
+  before_action :authenticate_user, {only: [:index]}
 
   def index
     @order = Order.all.order("created_at DESC")
@@ -20,8 +21,8 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to new_review_path
     else
-      redirect_to orders_path
-      flash[:notice] = "座席とドリンクを入力してください"
+      redirect_to new_order_path
+      flash[:alert] = "座席とドリンクを入力してください"
     end
   end
 
@@ -33,5 +34,12 @@ class OrdersController < ApplicationController
 
   def move_to_index
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def authenticate_user
+    if current_user.admin_flg == nil
+      redirect_to root_path
+    else
+    end
   end
 end

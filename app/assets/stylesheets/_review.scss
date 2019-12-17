@@ -1,0 +1,46 @@
+.review{
+  padding: 40px;
+  width: 800px;
+  margin: 40px auto;
+  &__box{
+    margin: 30px 0;
+    padding: 15px;
+    background-color: #fafafa;
+    &__rate{
+      font-weight: bold;
+    }
+    &__text{
+      textarea{
+        width: 650px;
+        padding: 5px 10px;
+        outline: none;
+        border: 2px solid #bbb;
+        &:focus{
+          border: 2px solid #FFAD90;
+        }
+      }
+    }
+    &__submit{
+      margin-bottom: 30px;
+      text-align: center;
+      input {
+        margin-top: 5px;
+        padding: 5px 10px;
+        width: 150px;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        background-color: #FFAD90;
+        color: #fff;
+        font-weight: bold;
+        &:hover{
+          background-color: #FFDBC9;
+          color: #eee;
+        }
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+  }
+}

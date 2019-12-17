@@ -8,7 +8,7 @@
           = link_to orders_path do
             注文票
           = link_to reviews_path do
-            売り子レビュー確認
+            レビュー確認
         -else
       -else
       .body__header__top__left
@@ -46,66 +46,69 @@
         THINK OUT OF<br>
         THE BOX<br>
         選手を想い、考える。<br>
+    .body__main__title
+      ドリンク
     .body__main__drinks
-      .body__main__drinks__title
-        ドリンク
-      .body__main__drinks__name
-        = Drink.find(4).name
-        = Drink.find(4).price.to_s(:currency, locale: :ja)
-      .body__main__drinks__image
-        = image_tag "/assets/beer.jpg", size: "300x300", alt: "生ビールの画像"
-      .body__main__drinks__name
-        = Drink.find(6).name
-        = Drink.find(6).price.to_s(:currency, locale: :ja)
-      .body__main__drinks__image
-        = image_tag "/assets/hi-bowl.jpg", size: "300x300", alt: "ハイボールの画像"
-      .body__main__drinks__name
-        = Drink.find(2).name
-        = Drink.find(2).price.to_s(:currency, locale: :ja)
-      .body__main__drinks__image
-        = image_tag "/assets/kiui.jpeg", size: "300x300", alt: "メロンソーダの画像"
-        
-      .body__main__drinks__name
-        = Drink.find(5).name
-        = Drink.find(5).price.to_s(:currency, locale: :ja)
-      .body__main__drinks__image
-        = image_tag "/assets/lemon-sower.jpg", size: "250x300", alt: "レモン酎ハイの画像"
-        
-      .body__main__drinks__name
-        = Drink.find(7).name
-        = Drink.find(7).price.to_s(:currency, locale: :ja)
-      .body__main__drinks__image
-        = image_tag "/assets/tower.jpg", size: "300x300", alt: "ばりうまビールの画像"
-        
-      .body__main__drinks__name
-        = Drink.find(3).name
-        = Drink.find(3).price.to_s(:currency, locale: :ja)
-      .body__main__drinks__image
-        = image_tag "/assets/u-rontea.png", size: "250x300", alt: "黒烏龍茶の画像"
-        
+      .body__main__drinks__box
+        %div.name
+          = Drink.find(4).name
+          = Drink.find(4).price.to_s(:currency, locale: :ja)
+        %div.image
+          = image_tag "/assets/beer.jpg", size: "300x300", alt: "生ビールの画像"
+      .body__main__drinks__box
+        %div.name
+          = Drink.find(6).name
+          = Drink.find(6).price.to_s(:currency, locale: :ja)
+        %div.image
+          = image_tag "/assets/hi-bowl.jpg", size: "300x300", alt: "ハイボールの画像"
+      .body__main__drinks__box
+        %div.name
+          = Drink.find(2).name
+          = Drink.find(2).price.to_s(:currency, locale: :ja)
+        %div.image
+          = image_tag "/assets/kiui.jpeg", size: "300x300", alt: "メロンソーダの画像"
+      .body__main__drinks__box
+        %div.name
+          = Drink.find(5).name
+          = Drink.find(5).price.to_s(:currency, locale: :ja)
+        %div.image
+          = image_tag "/assets/lemon-sower.jpg", size: "250x300", alt: "レモン酎ハイの画像"
+      .body__main__drinks__box
+        %div.name
+          = Drink.find(7).name
+          = Drink.find(7).price.to_s(:currency, locale: :ja)
+        %div.image
+          = image_tag "/assets/tower.jpg", size: "300x300", alt: "ばりうまビールの画像"
+      .body__main__drinks__box
+        %div.name
+          = Drink.find(3).name
+          = Drink.find(3).price.to_s(:currency, locale: :ja)
+        %div.image
+          = image_tag "/assets/u-rontea.png", size: "300x300", alt: "黒烏龍茶の画像"
 
     -# .body__main__foods
     -#   [食べもの]
+
+    .body__main__title
+      売り子
     .body__main__salespersons
-      .body__main__salespersons__title
-        売り子
-      .body__main__salespersons__name
-        = Salesperson.find(1).name
-      .body__main__salespersons__image
-        = image_tag "/assets/maiyan.jpg", size: "300x300", alt: "まいやんの画像"
-        
-      .body__main__salespersons__name
-        = Salesperson.find(2).name
-      .body__main__salespersons__image
-        = image_tag "/assets/teti.jpg", size: "300x300", alt: "てちの画像"
-        
-      .body__main__salespersons__name
-        = Salesperson.find(3).name
-      .body__main__salespersons__image
-        = image_tag "/assets/ryo.jpg", size: "300x300", alt: "りょうの画像"
-        
-      .body__main__salespersons__name
-        = Salesperson.find(4).name
-      .body__main__salespersons__image
-        = image_tag "/assets/masaharu.jpg", size: "300x300", alt: "まさはるの画像"
-        
+      .body__main__drinks__box
+        %div.name
+          = Salesperson.find(1).name
+        %div.image
+          = image_tag "/assets/maiyan.jpg", size: "300x300", alt: "まいやんの画像"
+      .body__main__drinks__box
+        %div.name
+          = Salesperson.find(2).name
+        %div.image
+          = image_tag "/assets/teti.jpg", size: "300x300", alt: "てちの画像"
+      .body__main__drinks__box
+        %div.name
+          = Salesperson.find(3).name
+        %div.image
+          = image_tag "/assets/ryo.jpg", size: "300x300", alt: "りょうの画像"
+      .body__main__drinks__box
+        %div.name
+          = Salesperson.find(4).name
+        %div.image
+          = image_tag "/assets/masaharu.jpg", size: "300x300", alt: "まさはるの画像"

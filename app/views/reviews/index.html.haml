@@ -1,0 +1,10 @@
+.order
+  .order__drink
+    レビュー確認
+  .order__discription
+    - @review.all.each do |review|
+      %ul= review.created_at.strftime("%Y-%m-%d %H:%M")
+      %li= review.user.name
+      %li= review.rate
+      %li= review.text
+      <br>

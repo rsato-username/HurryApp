@@ -136,43 +136,38 @@
         font-size: 50px;
       }
     }
-    &__drinks{
-      display: block;
-      margin: 200px 50px;
+    &__title{
+      font-size: 30px;
+      margin: 200px 50px 0 50px;
       padding: 10px;
-      &__title{
-        font-size: 30px;
-      }
-      &__name{
-        width: 300px;
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 10px;
-        // display: inline;
-
-      }
-      &__image{
-        box-shadow: 0 0 8px gray;
-        width: 300px;
-        // display: inline;
+    }
+    &__drinks{
+      margin: 0 50px 200px 50px;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content:stretch;
+      
+      &__box{
+        margin-right: 20px;
+        div.name{
+          width: 300px;
+          text-align: center;
+          margin-top: 30px;
+          margin-bottom: 10px;
+        }
+        div.image{
+          box-shadow: 0 0 8px gray;
+          width: 300px;
+        }
       }
     }
     &__salespersons{
-      display: block;
-      margin: 200px 50px;
+      margin: 0 50px 200px 50px;
       padding: 10px;
-      &__title{
-        font-size: 30px;
-      }
-      &__name{
-        width: 300px;
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 10px;
-      }
-      &__image{
-        // display: inline;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      align-content:stretch;
     }
   }
 }

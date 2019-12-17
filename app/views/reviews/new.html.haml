@@ -1,17 +1,20 @@
 - if flash[:notice]
   .flash
     = flash[:notice]
-.body
-  .body__complete
-    注文が完了しました。少々お待ちください。
-    = link_to 'ホームに戻る', root_path, data: {"turbolinks" => false}
-  .body__review
+.review
+  注文が完了しました。少々お待ちください。
+  = link_to 'ホームに戻る', root_path, data: {"turbolinks" => false}
+  .review__box
     = form_with model: @review, local: true, remote: true do |f|
-      .body__review__rate#star
-        = f.label :rate, '星'
-        = f.hidden_field :rate
-      .body__review__text
-        = f.label :レビュー
-        = f.text_area :text
-      .body__review__submit
-        = f.submit "レビュー評価"
+      .review__box__rate#star
+        = f.label :text, "レビューする"
+        -# = f.label :rate, '星'
+        = f.hidden_field :rate, id: :review_star
+        %div#star-rating
+      .review__box__text
+        = f.text_area :text, placeholder: "書き込みは任意です"
+      .review__box__submit
+        = f.submit "送信する"
+  .order__form__image
+    = link_to root_path, data: {"turbolinks" => false} do
+      = image_tag "/assets/uriko.jpeg", alt: "メロンソーダの画像"

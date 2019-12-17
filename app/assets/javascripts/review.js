@@ -1,8 +1,10 @@
-// $(function() {
-//   $('#star').raty({
-//     size     : 36,
-//     starOff:  asset_path('star-off.png'),
-//     starOn : asset_path('star-on.png'),
-//     scoreName: 'review[rate]',
-//   });
-// });
+$(function() {
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rate]',
+    half: true,
+    click: function(score, e) {
+    $("#review_star").val(score)
+    }
+    });
+});

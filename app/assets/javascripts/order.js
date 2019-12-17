@@ -1,32 +1,32 @@
 $(function() {
   function builtHTML(salesperson){
     let html = `
-    <div class = order__form__salesperson__search>
-      <p>${salesperson.name}</p>
+    <div class = salesperson>
+      ${salesperson.name}
     </div>
     `
-    $(".order__form__salesperson__search").append(html);
+    $("#search-result").append(html);
   }
 
   function NoResult(){
     let html = `
-    <div class = order__form__salesperson__search>
+    <div class = salesperson>
       <p>売り子が見つかりません</p>
     </div>
     `
-    $(".order__form__salesperson__search").append(html);
+    $("#search-result").append(html);
   }
 
   $("#search").on("keyup", function(){
     let input = $("#search").val();
     $.ajax({
       type: "GET",
-      url: "/orders",
+      url: "/orders/new",
       data: { keyword: input },
       dataType: "json"
     })
       .done(function(salesperson) {
-        $(".order__form__salesperson__search").empty();
+        $("#search-result").empty();
         if (salesperson.length !== 0) {
           salesperson.forEach(function(salesperson) {
             builtHTML(salesperson);

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_123024) do
+ActiveRecord::Schema.define(version: 2019_12_17_090620) do
 
   create_table "drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -66,10 +66,10 @@ ActiveRecord::Schema.define(version: 2019_11_13_123024) do
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text"
-    t.integer "rate", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rate"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 

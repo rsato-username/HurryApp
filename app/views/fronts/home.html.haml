@@ -1,0 +1,15 @@
+#account-page.account-page
+  .body__header__top__left.signin
+    Hurry App
+    .text
+      野球×美女<br>
+      球場で出会えるキュート
+  = image_tag "/assets/top4.jpg", alt: "売り子の画像", width: "400px"
+  = image_tag "/assets/top1.jpg", alt: "売り子の画像", width: "500px"
+  .registration__link
+    = link_to new_user_session_path do
+      %div
+        ログイン
+    = link_to new_user_registration_path do
+      %div
+        新規会員登録

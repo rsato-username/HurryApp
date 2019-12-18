@@ -1,7 +1,10 @@
 class FrontsController < ApplicationController
-  before_action :move_to_index
+  before_action :move_to_index, only: :index
 
   def index
+  end
+
+  def home
   end
 
   private

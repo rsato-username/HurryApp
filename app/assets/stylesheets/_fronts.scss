@@ -28,6 +28,19 @@
           color: #000;
           text-decoration: none;
         }
+        &.signin{
+          font-size: 20px;
+          font-weight: bold;
+          .text{
+            position: absolute;
+            font-size: 40px;
+            margin: 10px;
+            left: 150px;
+            top: 100px;
+            text-shadow: 2px 2px 0 #fff;
+            color: #330000;
+          }
+        }
       }
       &__right{
         margin-right: 30px;

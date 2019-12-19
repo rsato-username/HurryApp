@@ -11,4 +11,5 @@ class Order < ApplicationRecord
   has_many :drinks,  through:  :order_drink
   has_many :order_salesperson
   has_many :salespersons,  through:  :order_salesperson
+  has_many :notifications, dependent: :destroy
 end

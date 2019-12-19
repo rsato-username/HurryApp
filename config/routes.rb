@@ -3,13 +3,21 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'fronts#index'
+
   resources :fronts, only: :index do
     collection do
       get :home
     end
   end
+
   resources :users, only: [:edit, :update]
-  resources :orders, only: [:index, :new, :create]
+
+  resources :orders, only: [:index, :new, :create] do
+    collection do
+      post :confirm
+    end
+  end
+
   resources :reviews, only: [:index, :new, :create]
   # resources :drinks, only: [:index]
 

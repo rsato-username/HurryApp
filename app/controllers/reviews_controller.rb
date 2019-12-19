@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:text, :rate, :score).merge(user_id: current_user.id)
+    params.require(:review).permit(:text, :rate).merge(user_id: current_user.id)
   end
 
   def move_to_index

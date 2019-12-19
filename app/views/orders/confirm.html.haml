@@ -1,0 +1,32 @@
+.order
+  = form_with model: @order, local: true do |f|
+    .order__form
+      注文はお間違いありませんか？
+      .order__form__seat
+        = f.label :seat, "＜座席＞"
+        <br>
+        = @order.seat
+        = f.hidden_field :seat
+      .order__form__drink
+        = f.label :drink, "＜ドリンク＞"
+        <br>
+        = @order.drink
+        = f.hidden_field :drink
+      -#   [食べもの]⚾️1人分の値段です⚾️<br>
+      -#   = f.collection_check_boxes :food, Food.all, :id, :name, {} do |b|
+      -#     = b.label do
+      -#       = b.check_box
+      -#       = b.object.name
+      -#       = b.object.price.to_s(:currency, locale: :ja)
+      .order__form__salesperson
+        = f.label :salesperson, "＜売り子＞⚾️ご指名されない場合早くお届けできます⚾️"
+        <br>
+        = @order.salesperson
+        = f.hidden_field :salesperson
+      .order__form__submit
+        = f.submit '注文確定', id: "submit"
+      .order__form__back
+        = link_to "注文画面に戻る", new_order_path
+      .order__form__image
+        = link_to root_path, data: {"turbolinks" => false} do
+          = image_tag "/assets/uriko.jpeg", alt: "メロンソーダの画像"

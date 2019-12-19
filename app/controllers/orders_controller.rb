@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+
     return nil if params[:keyword] == ""
     @orders = Salesperson.where('name LIKE(?)', "%#{params[:keyword]}%")
     respond_to do |format|
@@ -16,8 +17,32 @@ class OrdersController < ApplicationController
     end
   end
 
+  def confirm
+    # @order = Order.new(order_params)
+    # if @order.valid?
+    #   render 'confirm'
+    # else
+    #   render 'new'
+    # end
+    # session[:seat] = order_params[:seat]
+    # session[:drink] = order_params[:drink]
+    # session[:salesperson] = order_params[:salesperson]
+
+    # @order = Order.new(
+    #   seat: session[:seat],
+    #   drink: session[:drink],
+    #   salesperson: session[:salesperson]
+    # )
+  end
+
   def create
     @order = Order.create(order_params)
+    # @order = Order.new(
+    #   seat: session[:seat],
+    #   drink: session[:drink],
+    #   salesperson: session[:salesperson]
+    # )
+    # binding.pry
     if @order.save
       redirect_to new_review_path
     else
@@ -33,7 +58,7 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    redirect_to new_user_session_path unless user_signed_in?
+    redirect_to home_fronts_path unless user_signed_in?
   end
 
   def authenticate_user

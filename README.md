@@ -34,8 +34,7 @@ host12345
 
 
 * テストアカウント(1)でログイン  
-  ![/assets/demo1.jpg]
-  
+![demo1](https://user-images.githubusercontent.com/56751063/71317857-61715600-24cb-11ea-90e9-2cbb3b8857ed.jpg)
 
 トップページ  
   ![demo2.jpeg]

@@ -31,10 +31,10 @@ HurryApp
 ![demo6](https://user-images.githubusercontent.com/56751063/71323135-37438680-2513-11ea-9010-6a72b0473506.png)
 
 オーダーから**提供完了画面へ**進むと、提供完了できる  
-![demo7](https://user-images.githubusercontent.com/56751063/71323137-390d4a00-2513-11ea-961b-892c6e83a86d.png)
+![demo8](https://user-images.githubusercontent.com/56751063/71323138-3a3e7700-2513-11ea-8855-27d5f97cc625.png)
 
 オーダーから**提供完了済み**のオーダーを見れる  
-![demo8](https://user-images.githubusercontent.com/56751063/71323138-3a3e7700-2513-11ea-8855-27d5f97cc625.png)
+![demo9](https://user-images.githubusercontent.com/56751063/71323211-f9932d80-2513-11ea-811a-11061142c3fc.png)
 
 ヘッダーの**レビュー確認**からレビュー履歴がみれる  
 ![demo7](https://user-images.githubusercontent.com/56751063/71317883-a6958800-24cb-11ea-9294-331b74fa0afc.png)

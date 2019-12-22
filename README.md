@@ -40,7 +40,7 @@ host12345
 ![demo2](https://user-images.githubusercontent.com/56751063/71317874-97163f00-24cb-11ea-9064-d1cbcf847e65.jpeg)
 
 ヘッダーの**注文する**から注文画面へ  
-![demo3](https://user-images.githubusercontent.com/56751063/71317877-9e3d4d00-24cb-11ea-8836-d10d19d2d782.jpg)
+![demo3](https://user-images.githubusercontent.com/56751063/71318249-b3b57580-24d1-11ea-81ee-7134d4534d5a.jpg)
 
 注文終了後、ホーム画面に戻るかレビューできる  
 ![demo4](https://user-images.githubusercontent.com/56751063/71317878-a09fa700-24cb-11ea-823f-67d843a8b73a.jpg)
@@ -49,7 +49,7 @@ host12345
 ![demo5](https://user-images.githubusercontent.com/56751063/71317880-a39a9780-24cb-11ea-9b2a-c3ab0d52d790.jpg)
 
 ヘッダーの**オーダー**から注文履歴がみれる  
-![demo6](https://user-images.githubusercontent.com/56751063/71317882-a4cbc480-24cb-11ea-8375-004df9d007b9.png)
+![demo6](https://user-images.githubusercontent.com/56751063/71318250-b6b06600-24d1-11ea-887c-2a7a16b8c4fd.png)
 
 ヘッダーの**レビュー確認**からレビュー履歴がみれる  
 ![demo7](https://user-images.githubusercontent.com/56751063/71317883-a6958800-24cb-11ea-9294-331b74fa0afc.png)

@@ -1,10 +1,10 @@
 .list
   .list__title
-    オーダー<br>
+    提供済みオーダー<br>
     = link_to root_path, data: {"turbolinks" => false} do
       ホームに戻る<br>
-    = link_to history_orders_path do
-      提供済みのオーダーへ
+    = link_to orders_path do
+      オーダーに戻る
   .list__discription
     - @order.all.each do |order|
       %ul= order.created_at.strftime("%Y-%m-%d %H:%M")
@@ -12,5 +12,4 @@
       %li= order.seat
       %li= order.drink
       %li= order.salesperson
-      = link_to order_path(order.id) do
-        %button.progress 提供完了画面へ
+      <br>

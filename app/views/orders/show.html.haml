@@ -1,0 +1,10 @@
+.show
+  %ul= @order.created_at.strftime("%Y-%m-%d %H:%M")
+  %li= @order.user.name
+  %li= @order.drink
+  %li= @order.seat
+  %li= @order.salesperson
+  = link_to completed_order_path(@order) do
+    %button.progress 提供完了確定
+  = link_to orders_path do
+    戻る

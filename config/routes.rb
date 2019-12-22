@@ -9,12 +9,17 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:edit, :update]
-  resources :orders, only: [:index, :new, :create] do
+  resources :orders, only: [:index, :new, :create, :show] do
     collection do
       get :confirm
+      get :history
+    end
+    member do
+      get :completed
     end
   end
   resources :reviews, only: [:index, :new, :create]
+  resources :notifications, only: :index
   # resources :drinks, only: [:index]
 
   # resources :drinks, only: [:index, :new]

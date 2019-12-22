@@ -2,6 +2,8 @@ class FrontsController < ApplicationController
   before_action :move_to_index, only: :index
 
   def index
+    @drink = Drink.all
+    @salesperson = Salesperson.all
   end
 
   def home

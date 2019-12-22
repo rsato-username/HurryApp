@@ -3,7 +3,8 @@ class OrdersController < ApplicationController
   before_action :authenticate_user, {only: [:index]}
 
   def index
-    @order = Order.all.order("created_at DESC")
+    @order = Order.all.order("created_at DESC").where(status: nil)
+    # @order = Order.all.select("date(created_at)").group("date(created_at)")
   end
 
   def new
@@ -44,11 +45,26 @@ class OrdersController < ApplicationController
     # )
     # binding.pry
     if @order.save
+      @order.create_notification_order!(current_user, @order.id)
       redirect_to new_review_path
     else
       redirect_to new_order_path
       flash[:alert] = "座席とドリンクを入力してください"
     end
+  end
+
+  def show 
+    @order = Order.find(params[:id])
+  end
+
+  def completed
+    @order = Order.find(params[:id])
+    @order.update(status: "完了")
+    redirect_to orders_path
+  end
+
+  def history
+    @order = Order.all.order("created_at DESC").where(status: "完了")
   end
 
   private

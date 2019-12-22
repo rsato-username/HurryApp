@@ -34,7 +34,7 @@ host12345
 
 
 * テストアカウント(1)でログイン
-![demo1.jpg]
+![/assets/demo1.jpg]
 
 トップページ
 ![demo2.jpeg]

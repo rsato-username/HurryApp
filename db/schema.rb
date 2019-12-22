@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_090620) do
+ActiveRecord::Schema.define(version: 2019_12_22_115519) do
 
   create_table "drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -26,31 +27,19 @@ ActiveRecord::Schema.define(version: 2019_12_17_090620) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "order_id"
-    t.bigint "drink_id"
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
+    t.integer "order_id"
+    t.integer "review_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["drink_id"], name: "index_order_drinks_on_drink_id"
-    t.index ["order_id"], name: "index_order_drinks_on_order_id"
-  end
-
-  create_table "order_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "order_id"
-    t.bigint "food_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_id"], name: "index_order_foods_on_food_id"
-    t.index ["order_id"], name: "index_order_foods_on_order_id"
-  end
-
-  create_table "order_salespeople", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "order_id"
-    t.bigint "salesperson_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_salespeople_on_order_id"
-    t.index ["salesperson_id"], name: "index_order_salespeople_on_salesperson_id"
+    t.index ["order_id"], name: "index_notifications_on_order_id"
+    t.index ["review_id"], name: "index_notifications_on_review_id"
+    t.index ["visited_id"], name: "index_notifications_on_visited_id"
+    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_090620) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -77,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_090620) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -94,12 +85,6 @@ ActiveRecord::Schema.define(version: 2019_12_17_090620) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "order_drinks", "drinks"
-  add_foreign_key "order_drinks", "orders"
-  add_foreign_key "order_foods", "foods"
-  add_foreign_key "order_foods", "orders"
-  add_foreign_key "order_salespeople", "orders"
-  add_foreign_key "order_salespeople", "salespeople"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "users"
 end

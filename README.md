@@ -8,6 +8,7 @@ HurryApp
 * ユーザーの新規会員登録、ログイン機能
 * 注文機能
 * レビュー機能
+* 管理者機能
 
 ## Demo
 * テストアカウント(1)  
@@ -47,11 +48,19 @@ host12345
 ![demo5](https://user-images.githubusercontent.com/56751063/71317880-a39a9780-24cb-11ea-9b2a-c3ab0d52d790.jpg)
 
 ヘッダーの**オーダー**から注文履歴がみれる  
-![demo6](https://user-images.githubusercontent.com/56751063/71318250-b6b06600-24d1-11ea-887c-2a7a16b8c4fd.png)
+![demo6](https://user-images.githubusercontent.com/56751063/71318419-eeb8a880-24d3-11ea-90f9-6af2d7c58ef1.png)
 
 ヘッダーの**レビュー確認**からレビュー履歴がみれる  
 ![demo7](https://user-images.githubusercontent.com/56751063/71317883-a6958800-24cb-11ea-9294-331b74fa0afc.png)
 
+
+
+## 開発予定の機能
+* 注文確認画面の実装
+* 注文、レビュー履歴の自動更新
+* 注文、レビュー履歴の並び替え機能
+* 注文、レビュー履歴のページネーション機能
+* 注文の通知機能
 
 
 

@@ -15,10 +15,6 @@
       margin: 30px auto;
       input{
         padding: 5px 10px;
-        outline: none;
-        &:focus{
-          border: 2px solid #FFAD90;
-        }
       }
     }
     &__drink{
@@ -35,6 +31,17 @@
       input{
         padding: 5px 10px;
         outline: none;
+        &:focus{
+          border: 2px solid #FFAD90;
+        }
+      }
+      select{
+        height: 40px;
+        width: 300px;
+        padding: 5px 10px;
+        outline: none;
+        border: 2px solid #ccc;
+        background-color: #fff;
         &:focus{
           border: 2px solid #FFAD90;
         }
@@ -71,6 +78,10 @@
           outline: none;
         }
       }
+    }
+    &__cash{
+      text-align: center;
+      color: #aaa;
     }
     &__back{
       text-align: center;

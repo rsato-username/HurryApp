@@ -11,28 +11,8 @@ HurryApp
 * 管理者機能
 
 ## Demo
-* テストアカウント(1)  
-**ユーザー名**
-test
-**ユーザーID**
-7065877
-**メールアドレス**
-test@test.com
-**パスワード**
-test12345
 
-* テストアカウント(2)  
-**ユーザー名**
-host
-**ユーザーID**
-2215470
-**メールアドレス**
-host@host.com
-**パスワード**
-host12345
-
-
-テストアカウント(1)でログイン  
+ログイン画面  
 ![demo1](https://user-images.githubusercontent.com/56751063/71317857-61715600-24cb-11ea-90e9-2cbb3b8857ed.jpg)
 
 トップページ  
@@ -41,14 +21,20 @@ host12345
 ヘッダーの**注文する**から注文画面へ  
 ![demo3](https://user-images.githubusercontent.com/56751063/71318249-b3b57580-24d1-11ea-81ee-7134d4534d5a.jpg)
 
-注文終了後、ホーム画面に戻るかレビューできる  
+注文完了後、ホーム画面に戻るかレビューできる  
 ![demo4](https://user-images.githubusercontent.com/56751063/71317878-a09fa700-24cb-11ea-823f-67d843a8b73a.jpg)
 
-テストアカウント(2)でログイン  
+運営アカウントでログイン  
 ![demo5](https://user-images.githubusercontent.com/56751063/71317880-a39a9780-24cb-11ea-9b2a-c3ab0d52d790.jpg)
 
-ヘッダーの**オーダー**から注文履歴がみれる  
-![demo6](https://user-images.githubusercontent.com/56751063/71318419-eeb8a880-24d3-11ea-90f9-6af2d7c58ef1.png)
+ヘッダーの**オーダー**から注文がみれる  
+![demo6](https://user-images.githubusercontent.com/56751063/71323135-37438680-2513-11ea-9010-6a72b0473506.png)
+
+オーダーから**提供完了画面へ**進むと、提供完了できる  
+![demo7](https://user-images.githubusercontent.com/56751063/71323137-390d4a00-2513-11ea-961b-892c6e83a86d.png)
+
+オーダーから**提供完了済み**のオーダーを見れる  
+![demo8](https://user-images.githubusercontent.com/56751063/71323138-3a3e7700-2513-11ea-8855-27d5f97cc625.png)
 
 ヘッダーの**レビュー確認**からレビュー履歴がみれる  
 ![demo7](https://user-images.githubusercontent.com/56751063/71317883-a6958800-24cb-11ea-9294-331b74fa0afc.png)
@@ -57,9 +43,7 @@ host12345
 
 ## 開発予定の機能
 * 注文確認画面の実装
-* 注文、レビュー履歴の自動更新
 * 注文、レビュー履歴の並び替え機能
-* 注文、レビュー履歴のページネーション機能
 * 注文の通知機能
 
 

@@ -34,8 +34,8 @@ host12345
 
 
 * テストアカウント(1)でログイン  
-  ![/Users/r.sato/Desktop/hurryApp/app/assets/images/demo1.jpg]
-  /Users/r.sato/Desktop/hurryApp/app/assets/images/demo1.jpg
+  ![/assets/demo1.jpg]
+  
 
 トップページ  
   ![demo2.jpeg]

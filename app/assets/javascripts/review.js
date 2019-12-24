@@ -1,6 +1,6 @@
 $(function() {
   $('#star-rating').raty({
-    path: '/assets/',
+    path: '/images/',
     scoreName: 'review[rate]',
     half: true,
     click: function(score, e) {
@@ -12,7 +12,7 @@ $(function() {
 
 $(function() {
   $('#star-rating-result').raty({
-    path: '/assets/',
+    path: '/images/',
     scoreName: 'review[rate]',
     half: true,
     readOnly: true,

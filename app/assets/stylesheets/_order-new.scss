@@ -15,6 +15,11 @@
       margin: 30px auto;
       input{
         padding: 5px 10px;
+        border: solid 2px #bbbbbb;
+        outline: none;
+        &:focus{
+          border: 2px solid #FFAD90;
+        }
       }
     }
     &__drink{

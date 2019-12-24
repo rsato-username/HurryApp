@@ -16,7 +16,8 @@ HurryApp
 ![demo1](https://user-images.githubusercontent.com/56751063/71317857-61715600-24cb-11ea-90e9-2cbb3b8857ed.jpg)
 ![demo11](https://user-images.githubusercontent.com/56751063/71395229-6d3e5300-2658-11ea-8e7e-ca6ff46f7fbe.jpg)
 
-新規登録画面にて名前、メールアドレス、パスワードを入力でユーザー登録できる。新規登録時、自動でユーザーIDが生成される  
+新規登録画面にて名前、メールアドレス、パスワードを入力でユーザー登録できる  
+新規登録時、自動でユーザーIDが生成される  
 ![demo10](https://user-images.githubusercontent.com/56751063/71395057-afb36000-2657-11ea-88db-1c931c981ce6.jpg)
 
 トップページ全体図、新規会員登録時に自動生成されたユーザーIDが画面右上に表示される  

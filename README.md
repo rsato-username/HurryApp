@@ -2,7 +2,7 @@
 HurryApp
 
 ## 概要
-野球やサッカーの競技場のような座席番号がある会場で注文することを想定したアプリケーション
+野球やサッカーといったスポーツ観戦の際にドリンクを注文するためのアプリケーションです。ドームや競技場等、座席番号が割り振られている会場を想定しています。
 
 ## 機能一覧
 * ユーザーの新規会員登録、ログイン機能
@@ -14,8 +14,12 @@ HurryApp
 
 ログイン画面  
 ![demo1](https://user-images.githubusercontent.com/56751063/71317857-61715600-24cb-11ea-90e9-2cbb3b8857ed.jpg)
+![demo11](https://user-images.githubusercontent.com/56751063/71395229-6d3e5300-2658-11ea-8e7e-ca6ff46f7fbe.jpg)
 
-トップページ  
+新規登録画面にて名前、メールアドレス、パスワードを入力でユーザー登録できる。新規登録時、自動でユーザーIDが生成される  
+![demo10](https://user-images.githubusercontent.com/56751063/71395057-afb36000-2657-11ea-88db-1c931c981ce6.jpg)
+
+トップページ全体図、新規会員登録時に自動生成されたユーザーIDが画面右上に表示される  
 ![demo2](https://user-images.githubusercontent.com/56751063/71317874-97163f00-24cb-11ea-9064-d1cbcf847e65.jpeg)
 
 ヘッダーの**注文する**から注文画面へ  
@@ -56,7 +60,7 @@ HurryApp
 |name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|customerid|integer|null: false|
+|userid|integer|null: false|
 
 #### Association
 - has_many  :orders
@@ -68,7 +72,7 @@ HurryApp
 |------|----|-------|
 |text|text||
 |rate|integer|null: false|
-|customer_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 #### Association
 - belongs_to  :user
@@ -81,7 +85,7 @@ Column|Type|Options|
 |food|string|null: false|
 |drink|string|null: false|
 |salesperson|string|null: false|
-|customer_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 #### Association
 - belongs_to :user

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_22_115519) do
+ActiveRecord::Schema.define(version: 2019_12_25_084656) do
 
   create_table "drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,13 +45,33 @@ ActiveRecord::Schema.define(version: 2019_12_22_115519) do
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "seat", null: false
     t.string "food", default: "", null: false
-    t.string "drink", null: false
-    t.string "salesperson", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.bigint "drink_id"
+    t.bigint "salesperson_id"
+    t.index ["drink_id"], name: "index_orders_on_drink_id"
+    t.index ["salesperson_id"], name: "index_orders_on_salesperson_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "orders_drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "drink_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drink_id"], name: "index_orders_drinks_on_drink_id"
+    t.index ["order_id"], name: "index_orders_drinks_on_order_id"
+  end
+
+  create_table "orders_salespeople", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "salesperson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_orders_salespeople_on_order_id"
+    t.index ["salesperson_id"], name: "index_orders_salespeople_on_salesperson_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,6 +105,12 @@ ActiveRecord::Schema.define(version: 2019_12_22_115519) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "drinks"
+  add_foreign_key "orders", "salespeople"
   add_foreign_key "orders", "users"
+  add_foreign_key "orders_drinks", "drinks"
+  add_foreign_key "orders_drinks", "orders"
+  add_foreign_key "orders_salespeople", "orders"
+  add_foreign_key "orders_salespeople", "salespeople"
   add_foreign_key "reviews", "users"
 end

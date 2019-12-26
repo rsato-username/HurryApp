@@ -13,6 +13,12 @@ http://18.176.213.183/
 
 ## Demo
 
+### テスト用アカウント
+- ユーザーID: 59909091
+- メールアドレス: test@test.com
+- パスワード: test12345
+
+
 ログイン画面  
 ![demo1](https://user-images.githubusercontent.com/56751063/71395536-b4791380-2659-11ea-91c2-63c37020506f.jpg)
 ![demo11](https://user-images.githubusercontent.com/56751063/71395229-6d3e5300-2658-11ea-8e7e-ca6ff46f7fbe.jpg)

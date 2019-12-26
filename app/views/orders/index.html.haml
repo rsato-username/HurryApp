@@ -10,7 +10,9 @@
       %ul= order.created_at.strftime("%Y-%m-%d %H:%M")
       %li= order.user.name
       %li= order.seat
-      %li= order.drink
-      %li= order.salesperson
+      - order.drinks.all.each do |drink|
+        %li= drink.name
+      -if order.salesperson_id != nil
+        %li= order.salesperson.name
       = link_to order_path(order.id) do
         %button.progress 提供完了画面へ

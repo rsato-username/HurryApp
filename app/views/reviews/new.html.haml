@@ -1,6 +1,9 @@
 - if flash[:notice]
   .flash
     = flash[:notice]
+.title
+  = link_to root_path, data: {"turbolinks" => false} do
+    Hurry App
 .review
   注文が完了しました。少々お待ちください。
   = link_to 'ホームに戻る', root_path, data: {"turbolinks" => false}

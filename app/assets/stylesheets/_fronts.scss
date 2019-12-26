@@ -13,20 +13,19 @@
     position: fixed;
     text-align: center;
     padding-top: 10px;
+    box-shadow: 2px 2px 4px #aaa;
     &__top{
       display: flex;
       justify-content: space-between;
       font-size: 20px;
       font-weight: bold;
       a{
-        text-decoration: none;
         color: brown;
       }
       &__left{
         margin-left: 30px;
         a{
-          color: #000;
-          text-decoration: none;
+          color: #330000;
         }
         &.signin{
           font-size: 20px;
@@ -58,7 +57,6 @@
         a{
           font-weight: bold;
           color: #000;
-          text-decoration: none;
         }
         #move_drink{
           cursor: pointer;
@@ -113,7 +111,6 @@
         display: flex;
         right: 20px;
         a{
-          text-decoration: none;
           color: black;
         }
         &__set{
@@ -136,6 +133,7 @@
       position: relative;
       &__image{
         text-align: center;
+        // position: relative;
       }
       &__text{
         text-shadow: 3px 3px 0 #000;

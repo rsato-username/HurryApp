@@ -2,14 +2,17 @@
   .flash
     = flash[:alert]
 .order
+  .title
+    = link_to root_path, data: {"turbolinks" => false} do
+      Hurry App
   = form_with model: @order, local: true do |f|
     .order__form
       .order__form__seat
         = f.label :seat, "＜座席＞"
         = f.text_field :seat, placeholder: '（例）1塁側10列10番', size: 30
       .order__form__drink
-        = f.label :drink, "＜ドリンク＞⚾️1杯分の値段です⚾️"
-        = f.collection_check_boxes :drink, Drink.all, :name, :id, include_hidden: false do |b|
+        = f.label :drink_ids, "＜ドリンク＞⚾️1杯分の値段です⚾️"
+        = f.collection_check_boxes :drink_ids, Drink.all, :id, :id, include_hidden: false do |b|
           = b.label do
             %li#boxes
               = b.check_box
@@ -23,9 +26,9 @@
       -#       = b.object.name
       -#       = b.object.price.to_s(:currency, locale: :ja)
       .order__form__salesperson
-        = f.label :salesperson, "＜売り子＞⚾️ご指名されない場合早くお届けできます⚾️"
+        = f.label :salesperson_id, "＜売り子＞⚾️ご指名されない場合早くお届けできます⚾️"
         -# = f.text_field :salesperson, placeholder: 'お好きな売り子をご指名ください', size: 30 , autocomplete: 'off', id: "search" #インクリメンタルサーチで検索可能
-        = f.collection_select :salesperson, Salesperson.all, :name, :name, prompt: "---"
+        = f.collection_select :salesperson_id, Salesperson.all, :id, :name, prompt: "---"
         -# #search-result
       .order__form__submit
         = f.submit '注文する', id: "submit"

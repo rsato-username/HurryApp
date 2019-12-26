@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:seat, { drink: [] }, :salesperson).merge(user_id: current_user.id)
+    params.require(:order).permit(:seat, { drink_ids: [] }, :salesperson_id).merge(user_id: current_user.id)
   end
 
   def move_to_index

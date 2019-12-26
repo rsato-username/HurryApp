@@ -10,6 +10,8 @@
       %ul= order.created_at.strftime("%Y-%m-%d %H:%M")
       %li= order.user.name
       %li= order.seat
-      %li= order.drink
-      %li= order.salesperson
+      - order.drinks.all.each do |drink|
+        %li= drink.name
+      -if order.salesperson_id != nil
+        %li= order.salesperson.name
       <br>

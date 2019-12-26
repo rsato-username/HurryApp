@@ -67,6 +67,8 @@ http://18.176.213.183/
 #### Association
 - has_many  :orders
 - has_many  :reviews
+- has_many :active_notifications
+- has_many :passive_notifications
 
 
 ### reviewsテーブル
@@ -85,15 +87,17 @@ Column|Type|Options|
 |------|----|-------|
 |seat|string|null: false|
 |food|string|null: false|
-|drink|string|null: false|
-|salesperson|string|null: false|
 |user_id|references|null: false, foreign_key: true|
+|drink_id|references|null: false, foreign_key: true|
+|salesperson_id|references|foreign_key: true, optional: true|
 
 #### Association
 - belongs_to :user
 - has_many :foods
+- has_many :orders_drinks
 - has_many :drinks
-- has_many :salespersons
+- belongs_to :salespersons
+- has_many :notifications
 
 
 ### foodsテーブル
@@ -114,7 +118,19 @@ Column|Type|Options|
 |image|string|
 
 #### Association
+- has_many :orders_drinks
 - has_many :orders
+
+
+### orders_drinkテーブル
+|Column|Type|Options|
+|------|----|-------|
+|order|references|foreign_key: true|
+|drink|references|foreign_key: true|
+
+#### Association
+- belongs_to :order
+- belongs_to :drink
 
 
 ### salespersonsテーブル

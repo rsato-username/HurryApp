@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.create(review_params)
     if @review.save
+      @review.create_notification_review!(current_user, @review.id)
       redirect_to root_path
     else
       redirect_to reviews_path

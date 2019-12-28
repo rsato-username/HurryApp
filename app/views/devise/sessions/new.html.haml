@@ -4,14 +4,12 @@
     .text
       野球×美女<br>
       球場で出会えるキュート
-  = image_tag "/images/top4.jpg", alt: "売り子の画像", width: "350px"
-  = image_tag "/images/top1.jpg", alt: "売り子の画像", width: "450px"
+  = image_tag "/images/top4.jpg", alt: "売り子の画像", width: "25%"
+  = image_tag "/images/top1.jpg", alt: "売り子の画像", width: "32%"
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
-      -# %h2 ログインページ
-      -# = render "devise/shared/links"
-      = flash[:notice]
-      = flash[:alert]
+      %h5 ログインページ
+      = render "devise/shared/error_messages"
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
@@ -19,19 +17,6 @@
             = f.label :userid, "ユーザーID"
           .field-input
             = f.text_field :userid, autofocus: true
-          -# - if resource.errors.any?
-          -#   #error_explanation
-          -#     %h2
-          -#       = I18n.t("errors.messages.not_saved",                 |
-          -#         count: resource.errors.count,                       |
-          -#         resource: resource.class.model_name.human.downcase) |
-          -#     %ul
-          -#       - resource.errors.full_messages.each do |message|
-          -#         %li= message
-          -# - if resource.errors.any?
-          -#   %ul
-          -#     - resource.errors.full_messages_for(:userid).each do |message|
-          -#       %li= message
           .field-label
             = f.label :email, "メールアドレス"
           .field-input

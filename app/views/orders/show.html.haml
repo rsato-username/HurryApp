@@ -4,7 +4,7 @@
   %li= @order.seat
   - @order.drinks.all.each do |drink|
     %li= drink.name
-  -if @order.salesperson_id != nil
+  - if @order.salesperson_id != nil
     %li= @order.salesperson.name
   = link_to completed_order_path(@order) do
     %button.progress 提供完了確定

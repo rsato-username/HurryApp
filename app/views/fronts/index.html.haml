@@ -42,29 +42,29 @@
     .body__main__content
       .body__main__content__image
         = image_tag "/images/login.jpg", alt: "売り子の画像"
-      .body__main__content__text
-        THINK OUT OF<br>
-        THE PLAYERS<br>
-        選手を想い、考える。<br>
-    .body__main__title
-      ドリンク
-    .body__main__drinks
-      - @drink.each do |drink|
-        .body__main__drinks__box
-          %div.name
-            = drink.name
-            = drink.price.to_s(:currency, locale: :ja)
-          %div.image
-            = image_tag drink.image, size: "300x300", alt: "ドリンクの画像"
-    -# .body__main__foods
-    -#   [食べもの]
+        %p
+          THINK OUT OF<br>
+          THE PLAYERS<br>
+          選手を想い、考える。<br>
+      .body__main__content__title
+        ドリンク
+      .body__main__content__drinks
+        - @drink.each do |drink|
+          .body__main__content__drinks__box
+            %div.name
+              = drink.name
+              = drink.price.to_s(:currency, locale: :ja)
+            %div.image
+              = image_tag drink.image, size: "300x300", alt: "ドリンクの画像"
+      -# .body__main__foods
+      -#   [食べもの]
 
-    .body__main__title
-      売り子
-    .body__main__salespersons
-      - @salesperson.each do |salesperson|
-        .body__main__drinks__box
-          %div.name
-            = salesperson.name
-          %div.image
-            = image_tag salesperson.image, size: "300x300", alt: "売り子の画像"
+      .body__main__content__title
+        売り子
+      .body__main__content__salespersons
+        - @salesperson.each do |salesperson|
+          .body__main__content__drinks__box
+            %div.name
+              = salesperson.name
+            %div.image
+              = image_tag salesperson.image, size: "300x300", alt: "売り子の画像"

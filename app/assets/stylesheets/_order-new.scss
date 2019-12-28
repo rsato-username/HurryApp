@@ -30,6 +30,10 @@
           border: 2px solid #FFAD90;
         }
       }
+      &-confirm{
+        text-align: center;
+        margin-bottom: 15px;
+      }
     }
     &__drink{
       width: 300px;
@@ -37,6 +41,10 @@
       list-style: none;
       li{
         cursor: pointer;
+      }
+      &-confirm{
+        text-align: center;
+        margin-bottom: 15px;
       }
     }
     &__salesperson{

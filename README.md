@@ -28,7 +28,7 @@ http://18.176.213.183/
 ![demo10](https://user-images.githubusercontent.com/56751063/71395057-afb36000-2657-11ea-88db-1c931c981ce6.jpg)
 
 トップページ全体図、新規会員登録時に自動生成されたユーザーIDが画面右上に表示される  
-![demo2](https://user-images.githubusercontent.com/56751063/71317874-97163f00-24cb-11ea-9064-d1cbcf847e65.jpeg)
+![demo2](https://user-images.githubusercontent.com/56751063/71625952-ec6df100-2c2d-11ea-9654-c9667ffe0b2c.jpg)
 
 ヘッダーの**注文する**から注文画面へ  
 ![demo3](https://user-images.githubusercontent.com/56751063/71318249-b3b57580-24d1-11ea-81ee-7134d4534d5a.jpg)

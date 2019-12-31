@@ -1,16 +1,31 @@
 .order
-  = form_with model: @order, url: orders_path, method: :post, local: true do |f|
+  .title
+    = link_to root_path, data: {"turbolinks" => false} do
+      Hurry App
+  = form_with model: @order, url: orders_path, local: true do |f|
     .order__form
-      .order__form__seat
+      .order__form__seat-confirm
         = f.label :seat, "＜座席＞"
-        = f.hidden_field :seat, :value => "#{@order.seat}"
+        = f.hidden_field :seat, :value => @order.seat
         <br>
         = @order.seat
-      .order__form__drink
-        = f.label :drink, "＜ドリンク＞⚾️1杯分の値段です⚾️"
-        = f.hidden_field :drink, :value => "#{@order.drink}"
+      .order__form__drink-confirm
+        = f.label :drink_ids, "＜ドリンク＞"
+        = f.hidden_field :drink_ids, :value => @order.drink_ids
+
+        -# - @order.drinks.each do |drink|
+        -#   = f.hidden_field :drink_ids, :value => drink.id
+
+        -# = f.hidden_field :drink_ids, :value => @order.drink_ids do |d|
+        -#   = d.label do
+        -#     %li#boxes
+        -#       = b.object.id
+
+        -# %input{:name => "drink_ids[]", :type => "hidden", :value => @order.drink_ids}/
         <br>
-        = @order.drink
+        - @order.drinks.each do |drink|
+          .span
+            = drink.name
       -# .order__food
       -#   [食べもの]⚾️1人分の値段です⚾️<br>
       -#   = f.collection_check_boxes :food, Food.all, :id, :name, {} do |b|
@@ -19,15 +34,18 @@
       -#       = b.object.name
       -#       = b.object.price.to_s(:currency, locale: :ja)
       .order__form__salesperson
-        = f.label :salesperson, "＜売り子＞⚾️ご指名されない場合早くお届けできます⚾️"
-        = f.hidden_field :salesperson, :value => "#{@order.salesperson}"
+        = f.label :salesperson_id, "＜売り子＞"
+        = f.hidden_field :salesperson_id, :value => @order.salesperson_id
         <br>
-        = @order.salesperson
-        #search-result
+        - if @order.salesperson_id != nil
+          = @order.salesperson.name
+        -# #search-result
       .order__form__submit
         = f.submit '注文する', id: "submit"
+      .order__form__cash
+        お会計は売り子が対応します
       .order__form__back
         = link_to "注文画面に戻る", new_order_path
       .order__form__image
-        = link_to root_path, data: {"turbolinks" => false} do
-          = image_tag "/images/uriko.jpeg", alt: "メロンソーダの画像"
+        = link_to new_order_path do
+          = image_tag "/images/uriko.jpg", alt: "メロンソーダの画像"

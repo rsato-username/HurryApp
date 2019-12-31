@@ -1,3 +1,3 @@
-json.array! @orders do |salesperson| 
-  json.name salesperson.name
-end
+# json.array! @orders do |salesperson| 
+#   json.name salesperson.name
+# end

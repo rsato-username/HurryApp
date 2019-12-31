@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_084656) do
+ActiveRecord::Schema.define(version: 2019_12_27_075816) do
 
   create_table "drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,9 +49,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_084656) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
-    t.bigint "drink_id"
     t.bigint "salesperson_id"
-    t.index ["drink_id"], name: "index_orders_on_drink_id"
     t.index ["salesperson_id"], name: "index_orders_on_salesperson_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -105,7 +103,6 @@ ActiveRecord::Schema.define(version: 2019_12_25_084656) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "orders", "drinks"
   add_foreign_key "orders", "salespeople"
   add_foreign_key "orders", "users"
   add_foreign_key "orders_drinks", "drinks"

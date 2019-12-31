@@ -9,6 +9,8 @@
             オーダー
           = link_to reviews_path do
             レビュー確認
+          = link_to notifications_path do
+            通知
         -else
       -else
       .body__header__top__left
@@ -68,3 +70,16 @@
               = salesperson.name
             %div.image
               = image_tag salesperson.image, size: "300x300", alt: "売り子の画像"
+  .body__footer
+    %div
+      Hurry App
+    = image_tag "/images/footer-sozai.png", alt: "売り子の画像"
+    .body__footer__info
+      %p 
+        = link_to "お知らせ", root_path, data: {"turbolinks" => false}
+      %p 
+        = link_to "利用規約", root_path, data: {"turbolinks" => false}
+      %p 
+        = link_to "マナー", root_path, data: {"turbolinks" => false}
+      %p 
+        = link_to "お問い合わせ", root_path, data: {"turbolinks" => false}

@@ -11,7 +11,7 @@
         = f.label :seat, "＜座席＞"
         = f.text_field :seat, placeholder: '（例）1塁側10列10番', size: 30
       .order__form__drink
-        = f.label :drink_ids, "＜ドリンク＞⚾️1杯分の値段です⚾️"
+        = f.label :drink_ids, "＜ドリンク＞1杯分の値段です"
         = f.collection_check_boxes :drink_ids, Drink.all, :id, :name, include_hidden: false do |b|
           = b.label do
             %li#boxes
@@ -19,14 +19,14 @@
               = b.object.name
               = b.object.price.to_s(:currency, locale: :ja)
       -# .order__food
-      -#   [食べもの]⚾️1人分の値段です⚾️<br>
+      -#   [食べもの]1人分の値段です<br>
       -#   = f.collection_check_boxes :food, Food.all, :id, :name, {} do |b|
       -#     = b.label do
       -#       = b.check_box
       -#       = b.object.name
       -#       = b.object.price.to_s(:currency, locale: :ja)
       .order__form__salesperson
-        = f.label :salesperson_id, "＜売り子＞⚾️ご指名されない場合早くお届けできます⚾️"
+        = f.label :salesperson_id, "＜売り子＞ご指名されない場合早くお届けできます"
         = f.collection_select :salesperson_id, Salesperson.all, :id, :name, prompt: "---"
         -# = f.text_field :salesperson, placeholder: 'お好きな売り子をご指名ください', size: 30 , autocomplete: 'off', id: "search" #インクリメンタルサーチで検索可能
         -# #search-result

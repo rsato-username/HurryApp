@@ -1,7 +1,7 @@
 $(function() {
   $('#move_drink').click('turbolinks:load', function() {
     $("html").animate({
-      scrollTop : $('.body__main__content__drinks').offset().top
+      scrollTop : $('.drink').offset().top
     }, {
       queue : false
     })
@@ -11,7 +11,7 @@ $(function() {
 $(function() {
   $('#move_salesperson').click('turbolinks:load', function() {
     $("html").animate({
-      scrollTop : $('.body__main__content__salespersons').offset().top
+      scrollTop : $('.salesperson').offset().top
     }, {
       queue : false
     })

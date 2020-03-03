@@ -29,17 +29,17 @@
           color: #330000;
         }
         &.signin{
-          font-size: 20px;
+          font-size: 1.5vw;
           font-weight: bold;
           .text{
             position: absolute;
-            font-size: 40px;
+            font-size: 2.5vw;
             margin: 10px;
             left: 150px;
             top: 100px;
             text-shadow: 2px 2px 0 #fff;
             color: #330000;
-          }
+		  }
         }
       }
       &__right{

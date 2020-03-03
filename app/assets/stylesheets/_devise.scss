@@ -1,83 +1,133 @@
-#account-page.account-page{
-  height: 100vh;
-  position: relative;
-  padding: 30px;
-  img{
-    border-radius: 20px;
-    margin-left: 30px;
-    // background-size: contain;
-    // width: 350px;
-    // height: 100vh;
-    // height: 100%;
-  }
-  .registration__link{
-    width: 28%;
-    padding: 30px 50px;
-    position: absolute;
-    top: 300px;
-    right: 100px;
-    border: 0.5px solid #bbb;
-    div{
-      width: 200px;
-      height: 50px;
-      background-color: #FFAD90;
-      margin: 10px auto;
-      padding: 5px 10px;
-      border-radius: 5px;
-      color: #fff;
-      text-align: center;
-      line-height: 2.5rem;
-      &:hover{
-        background-color: #FFDBC9;
-      }
-    }
-  }
-  .account-page__inner{
-    width: 28%;
-    color: #fff;
-    position: absolute;
-    top: 300px;
-    right: 80px;
-    padding: 30px 40px;
-    font-size: 18px;
-    text-align: center;
-    border: 0.5px solid #bbb;
-    &--left{
-      color: red;
-      text-shadow:0.5px 0.5px 0 #fff, -0.5px -0.5px 0 #fff,
-              -0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff,
-              0px 0.5px 0 #fff,  0-0.5px 0 #fff,
-              -0.5px 0 0 #fff, 0.5px 0 0 #fff;
-    }
-    .field{
-      text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
-              -1px 1px 0 #000, 1px -1px 0 #000,
-              0px 1px 0 #000,  0-1px 0 #000,
-              -1px 0 0 #000, 1px 0 0 #000;
-      input{
-        padding: 5px 10px;
-        border: solid 2px #bbbbbb;
-        outline: none;
-        &:focus{
-          border: 2px solid #FFAD90;
-        }
-      }
-    }
-    .actions{
-      margin-top: 20px;
-      input.btn{
-        width: 150px;
-        height: 30px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        background-color: #FFAD90;
-        color: #fff;
-        &:focus{
-          outline: none;
-        }
-      }
-    }
-
-  }
+#account-page.account-page
+{
+	font-size: 0;
+	background-color: red;
+	// height: 100vh;
+	// width: 100vw;
+	position: relative;
+	img
+	{
+		width: 100vw;
+		// height: 100vh;
+	}
+	&.ball
+	{
+		img
+		{
+			width: 100vw;
+		}
+	}
+	.home
+	{
+		.hurry
+		{
+			position: absolute;
+			top: 10%;
+			left: 10%;
+			transform: translate(-10%, -10%);
+			-webkit-transform: translate(-10%, -10%);
+			-ms-transform: translate(-10%, -10%);
+			font-size: 1.5vw;
+			// font-size: 140%;
+			font-weight: bold;
+		}
+		.text
+		{
+			position: absolute;
+			// font-size: 230%;
+			font-size: 2.5vw;
+			top: 20%;
+			left: 20%;
+			transform: translate(-20%, -20%);
+			-webkit-transform: translate(-20%, -20%);
+			-ms-transform: translate(-20%, -20%);
+			text-shadow: 2px 2px 0 #fff;
+			color: #330000;
+		}
+	}
+	.registration__link{
+		width: 28%;
+		padding: 30px 50px;
+		position: absolute;
+		top: 40%;
+		right: 0;
+		transform: translate(-10%, -50%);
+		-webkit-transform: translate(-10%, -50%);
+		-ms-transform: translate(-10%, -50%);
+		// border: 0.5px solid #bbb;
+		div{
+			width: 14vw;
+			height: 6.5vh;
+			background-color: #FFAD90;
+			margin: 30px;
+			// padding: 15px 10px;
+			padding: 5% 5%;
+			border-radius: 5px;
+			color: #fff;
+			font-size: 2vh;
+			text-align: center;
+			&:hover
+			{
+				background-color: #FFDBC9;
+			}
+		}
+	}
+	.account-page__inner{
+		width: 30vw;
+		height: 50%;
+		color: #fff;
+		margin: 0 auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		padding: 30px 40px;
+		font-size: 1.3vw;
+		text-align: center;
+		// border: 0.5px solid #bbb;
+		&--left
+		{
+			color: red;
+			text-shadow:0.5px 0.5px 0 #fff, -0.5px -0.5px 0 #fff,
+					-0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff,
+					0px 0.5px 0 #fff,  0-0.5px 0 #fff,
+					-0.5px 0 0 #fff, 0.5px 0 0 #fff;
+		}
+		.field
+		{
+			text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+					-1px 1px 0 #000, 1px -1px 0 #000,
+					0px 1px 0 #000,  0-1px 0 #000,
+					-1px 0 0 #000, 1px 0 0 #000;
+			input{
+			width: 17vw;
+			height: 5.5vh;
+			padding: 5px 10px;
+			border: solid 2px #bbbbbb;
+			outline: none;
+			&:focus{
+				border: 2px solid #FFAD90;
+			}
+			}
+		}
+		.actions
+		{
+			margin-top: 20px;
+			input.btn
+			{
+				width: 10.5vw;
+				height: 4vh;
+				border: none;
+				border-radius: 3px;
+				cursor: pointer;
+				background-color: #FFAD90;
+				color: #fff;
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+	}
 }

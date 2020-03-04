@@ -29,6 +29,8 @@
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions
           = f.submit "登録", class: 'btn'
+        .home-back
+          = link_to "戻る", :back
 
 -# = image_tag "/images/top2.jpg", alt: "売り子の画像"
 -# .home

@@ -10,34 +10,22 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
 
-    return nil if params[:keyword] == ""
-    @orders = Salesperson.where('name LIKE(?)', "%#{params[:keyword]}%")
-    respond_to do |format|
-      format.html 
-      format.json 
-    end
+    # return nil if params[:keyword] == ""
+    # @orders = Salesperson.where('name LIKE(?)', "%#{params[:keyword]}%")
+    # respond_to do |format|
+    #   format.html 
+    #   format.json 
+    # end
   end
 
   def confirm
-    # @order = Order.new(order_params)
-    # if @order.valid?
-    #   render 'confirm'
-    # else
-    #   render 'new'
-    # end
-    # session[:seat] = order_params[:seat]
-    # session[:drink] = order_params[:drink]
-    # session[:salesperson] = order_params[:salesperson]
-
-    # @order = Order.new(
-    #   seat: session[:seat],
-    #   drink: session[:drink],
-    #   salesperson: session[:salesperson]
-    # )
+    @order = Order.new(order_params)
+    render :new if @order.invalid?
   end
 
   def create
-    @order = Order.create(order_params)
+    # @order = Order.create(order_params)
+    @order = Order.new(order_params)
     # @order = Order.new(
     #   seat: session[:seat],
     #   drink: session[:drink],
@@ -64,13 +52,13 @@ class OrdersController < ApplicationController
   end
 
   def history
-    @order = Order.all.order("created_at DESC").where(status: "完了")
+    @order = Order.all.order("created_at DESC").where(status: "完了").kaminari_page(params[:page]).per(10)
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:seat, { drink_ids: [] }, :salesperson_id).merge(user_id: current_user.id)
+    params.require(:order).permit(:seat, :salesperson_id, drink_ids: []).merge(user_id: current_user.id)
   end
 
   def move_to_index

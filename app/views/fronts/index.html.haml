@@ -9,9 +9,11 @@
             オーダー
           = link_to reviews_path do
             レビュー確認
-          = link_to notifications_path do
-            通知
-        -else
+          .notice
+            = link_to notifications_path do
+              通知
+            - if @notice.present?
+              = image_tag "/images/star-on.png", alt: "売り子の画像"
       -else
       .body__header__top__left
         = link_to root_path, data: {"turbolinks" => false} do
@@ -76,11 +78,11 @@
       Hurry App
     = image_tag "/images/footer-sozai.png", alt: "売り子の画像"
     .body__footer__info
-      %p 
+      %p
         = link_to "お知らせ", root_path, data: {"turbolinks" => false}
-      %p 
+      %p
         = link_to "利用規約", root_path, data: {"turbolinks" => false}
-      %p 
+      %p
         = link_to "マナー", root_path, data: {"turbolinks" => false}
-      %p 
+      %p
         = link_to "お問い合わせ", root_path, data: {"turbolinks" => false}

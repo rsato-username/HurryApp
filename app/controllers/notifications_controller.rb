@@ -1,10 +1,9 @@
 class NotificationsController < ApplicationController
   def index
-    @notifications = current_user.passive_notifications   #.page(params[:page]).per(20)
-    @notice = @notifications.where.not(visitor_id: current_user.id)
-    
-    @notifications.where(checked: false).each do |notification|
-      notification.update_attributes(checked: true)
+    @notice = Notification.where(checked: true)
+    @notifications = Notification.all.kaminari_page(params[:page]).per(15)
+    @notifications.where(checked: true).each do |notification|
+      notification.update(checked: false)
     end
   end
 end

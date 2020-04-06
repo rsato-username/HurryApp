@@ -5,6 +5,8 @@
       ホームに戻る<br>
     = link_to orders_path do
       オーダーに戻る
+  = paginate @order
+  <br>
   .list__discription
     - @order.all.each do |order|
       %ul= order.created_at.strftime("%Y-%m-%d %H:%M")
@@ -15,3 +17,4 @@
       -if order.salesperson_id != nil
         %li= order.salesperson.name
       <br>
+    = paginate @order

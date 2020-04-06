@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user, {only: [:index]}
 
   def index
-    @review = Review.all.order("created_at DESC")
+    @review = Review.all.order("created_at DESC").kaminari_page(params[:page]).per(10)
   end
 
   def new

@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user, {only: [:index]}
 
   def index
-    @order = Order.all.order("created_at DESC").where(status: nil)
+    @order = Order.all.order("created_at ASC").where(status: nil)
     # @order = Order.all.select("date(created_at)").group("date(created_at)")
   end
 

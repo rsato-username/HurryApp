@@ -71,7 +71,7 @@
           height: 30px;
           border: none;
           &:hover{
-            background-color: #ffd700;
+            background-color: #FFBBFF;
           }
           &:focus{
             outline: none;
@@ -83,7 +83,7 @@
           height: 30px;
           border: none;
           &:hover{
-            background-color: #ffd700;
+            background-color: #FFBBFF;
           }
           &:focus{
             outline: none;
@@ -95,7 +95,7 @@
           height: 30px;
           border: none;
           &:hover{
-            background-color: #ffd700;
+            background-color: #FFBBFF;
           }
           &:focus{
             outline: none;
@@ -104,13 +104,13 @@
         #order_btn{
           height: 30px;
           &:hover{
-            background-color: #ffd700;
+            background-color: #FFBBFF;
             height: 30px;
           }
         }
       }
       &__contents:hover{
-        background-color: #ffd700;
+        background-color: #FFBBFF;
       }
       &__edit{
         position: absolute;
@@ -123,11 +123,11 @@
         &__set{
           margin-right: 20px;
           &:hover{
-            background-color: #ffd700;
+            background-color: #FFBBFF;
           }
         }
         &__logout:hover{
-          background-color: #ffd700;
+          background-color: #FFBBFF;
         }
       }
     }
@@ -141,14 +141,14 @@
       &__image{
         margin: 0 auto;
         text-align: center;
-        position: relative
+        position: relative;
       }
       p{
         text-align: left;
-        text-shadow: 3px 3px 0 #000;
-        color: #fafafa;
+        text-shadow: 3px 3px 0 #FFBBFF;
+        color: #FFFF22;
         position: absolute;
-        top: 550px;
+        top: 425px;
         left: 200px;
         font-size: 60px;
       }
